@@ -44,7 +44,7 @@ public class Square implements SquareInterface, Cloneable
 	{		
       	trace("Square: Constructor starts");
 
-//COMPLETE ME
+        loc = l;
 
       	trace("Square: Constructor ends");
 	}
@@ -68,7 +68,8 @@ public class Square implements SquareInterface, Cloneable
 	{
       	trace("Square: Constructor starts");
 
-//COMPLETE ME
+        loc = l;
+        symbol = s;
 
       	trace("Square: Constructor ends");
 	}
@@ -122,7 +123,7 @@ public class Square implements SquareInterface, Cloneable
 	{		
       	trace("isEmpty: isEmpty starts and ends");
 
-//COMPLETE ME
+        //COMPLETE ME
 	}
 	
 	
@@ -256,7 +257,8 @@ public class Square implements SquareInterface, Cloneable
 		
       	trace("clone: clone starts");
 
-//COMPLETE ME
+        s.setLocation(this.loc);
+        s.setSymbol(this.symbol);
 
       	trace("clone: clone ends");
 		return s;
