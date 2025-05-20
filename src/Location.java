@@ -41,7 +41,8 @@ public class Location implements LocationInterface, Cloneable
 	{
       	trace("Location: Constructor starts");
 
-//COMPLETE ME
+        row = r;
+        column = c;
 
       	trace("Location: Constructor ends");
 	}
@@ -62,7 +63,7 @@ public class Location implements LocationInterface, Cloneable
 	{
       	trace("setRow: setRow starts");
 
-//COMPLETE ME
+        row = r;
 
       	trace("setRow: setRow ends");
 	}
@@ -83,7 +84,7 @@ public class Location implements LocationInterface, Cloneable
 	{
       	trace("setColumn: setColumn starts");
 
-//COMPLETE ME
+        column = c;
 
       	trace("setColumn: setColumn ends");
 	}
@@ -104,7 +105,7 @@ public class Location implements LocationInterface, Cloneable
 	{
       	trace("getRow: getRow starts and ends");
 
-//COMPLETE ME
+        return row;
 	}
 	
 	
@@ -123,7 +124,7 @@ public class Location implements LocationInterface, Cloneable
 	{
       	trace("getColumn: getColumn starts and ends");
 
-//COMPLETE ME
+        return column
 	}
 	
 	
@@ -143,7 +144,8 @@ public class Location implements LocationInterface, Cloneable
 		
       	trace("clone: clone starts");
 
-//COMPLETE ME
+        l.setRow(this.row);
+        l.setColumn(this.column);
 
       	trace("clone: clone ends");
 		return l;
