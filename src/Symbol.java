@@ -87,8 +87,9 @@ public class Symbol implements SymbolInterface, Cloneable
 	{
      	trace("Symbol: Constructor starts");
 
-//COMPLETE ME
-
+		setIcon(i);
+		setLocation(l);
+        
       	trace("Symbol: Constructor ends");
 	}
 	
@@ -104,7 +105,11 @@ public class Symbol implements SymbolInterface, Cloneable
 	{
 		trace("isEmpty: isEmpty starts and ends");
 
-//COMPLETE ME
+        if (icon == null || loc == null)
+        {
+            return true;
+        }
+        return false;
 	}
 	
 	
@@ -123,7 +128,7 @@ public class Symbol implements SymbolInterface, Cloneable
 	{	
 		trace("setIcon: setIcon starts");
 
-//COMPLETE ME
+        icon = i;
 
 		trace("setIcon: setIcon ends");
 	}
@@ -143,7 +148,7 @@ public class Symbol implements SymbolInterface, Cloneable
 	{
 		trace("setLocation: setLocation starts");
 
-//COMPLETE ME
+        loc = l;
 
 		trace("setLocation: setLocation ends");
 
@@ -163,7 +168,7 @@ public class Symbol implements SymbolInterface, Cloneable
 	{
 		trace("getIcon: getIcon starts and ends");
 
-//COMPLETE ME
+        return icon;
 	}
 	
 	
@@ -180,7 +185,7 @@ public class Symbol implements SymbolInterface, Cloneable
 	{
 		trace("getLocation: getLocation starts and ends");
 
-//COMPLETE ME
+        return loc;
 	}
 	
 	
@@ -199,7 +204,8 @@ public class Symbol implements SymbolInterface, Cloneable
 		
       	trace("clone: clone starts");
 
-//COMPLETE ME
+        s.setIcon(s.getIcon());
+        s.setLocation(s.getLocation());
 		
       	trace("clone: clone ends");
 		return s;
