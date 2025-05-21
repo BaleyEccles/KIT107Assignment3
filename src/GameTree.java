@@ -343,21 +343,21 @@ public class GameTree implements GameTreeInterface
 		trace("generateLevelDF: generateLevelDF starts");
 		
         //COMPLETE ME: Done I think
-        b1 = (Grid)root.getData();
+        b1 = (Grid)getData();
         d = b1.getDimension();
         
-        v = getData().getLevel() + 1;
+        v = getLevel() + 1;
         
-        for (int r = MINIMUM; r <= dimension; r++)
+        for (int r = MINIMUM; r <= d; r++)
 		{
-			for (int c = MINIMUM; c <= dimension; c++)
+			for (int c = MINIMUM; c <= d; c++)
 			{
 				l = new Location(r, c);
-                if (!clash(l) && !squareOccupied(l))
+                if (!b1.clash(l) && !b1.squareOccupied(l))
                 {
-                    b2 = b1.clone();
-                    bNew.occupySquare(l, m);
-                    t = new GameTree(bNew, v);
+                    b2 = (Grid)b1.clone();
+                    b2.occupySquare(l, m);
+                    t = new GameTree(b2, v);
                     s.push(t);
                     setChild(t);
                 }
@@ -396,11 +396,24 @@ public class GameTree implements GameTreeInterface
 	*/
 	public GameTree buildGameDF(Stack s, Symbol m, int d)
 	{
-		GameTree t = null;		// result
+		GameTree t;		// result
 		
 		trace("buildGameDF: buildGameDF starts");
 		
-//COMPLETE ME
+        //COMPLETE ME TODO 
+        if (isEmpty() || getLevel() == d)
+        {
+        }    
+        else
+        {
+
+            generateLevelDF(s, m);
+            if (!s.isEmpty())
+            {
+                t = s.pop();
+                
+            }
+        }
 
 		trace("buildGameDF: buildGameDF ends");
 
