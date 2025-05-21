@@ -171,7 +171,7 @@ public class Stack implements StackInterface
 		
       	trace("push: push starts");
         
-      	n.setData(o);
+        n = new Node(o);
         tos = n;
 
       	trace("push: push ends");

@@ -80,7 +80,8 @@ public class Queue implements QueueInterface
 	{
 	   	trace("isEmpty: isEmpty starts and ends");
 
-//COMPLETE ME
+        //COMPLETE ME
+        return true;
 	}
 
 
@@ -110,7 +111,8 @@ public class Queue implements QueueInterface
 		{
 			// first value exists
 		   	trace("front: front ends");
-//COMPLETE ME
+            //COMPLETE ME
+            return true;
 		}
 	}
 

@@ -65,6 +65,7 @@ public class Grid implements GridInterface, Cloneable
       	trace("Grid: Constructor starts");
       	
         dimension = d;
+        initialiseGrid();
 		
       	trace("Grid: Constructor ends");		
 	}
@@ -169,8 +170,20 @@ public class Grid implements GridInterface, Cloneable
 		Symbol s;				// the symbol of the 'current' square
 		
       	trace("clone: clone starts");
-      	
-        b.dimension = dimension;
+
+        b = new Grid(getDimension());
+        
+        for (int r = MINIMUM; r <= dimension; r++)
+		{
+			for (int c = MINIMUM; c <= dimension; c++)
+			{
+				l = new Location(r, c);
+                s = board[r-1][c-1].getSymbol();
+				b.board[r-1][c-1] = new Square(l, s);
+            }
+        }
+
+
 				
       	trace("clone: clone ends");
 		return b;
@@ -334,9 +347,8 @@ public class Grid implements GridInterface, Cloneable
 		}
 		else
 		{
-            m = s.clone();
-            m.setLocation(l);
-            q.setSymbol(m);
+            // Complete me
+            
 		}
       	trace("occupySquare: occupySquare ends");
 	}
@@ -362,17 +374,9 @@ public class Grid implements GridInterface, Cloneable
 	public boolean squareOccupied(Location l)
 	{
       	trace("squareOccupied: squareOccupied starts and ends");
-        for (int i = 0; i < board.length(); i++)
-        {
-            for (int j = 0; j < board[i].length(); i++)
-            {
-                if (board[i][j].getColumn() == l.getColumn() && board[i][j].getRow() == l.getRow())
-                {
-                    return true;
-                }
-            }
-        }
+        //COMPLETE ME
         return false;
+
 	}
 	
 	
@@ -394,7 +398,7 @@ public class Grid implements GridInterface, Cloneable
 	{
 		final int MINIMUM = 1;	// minimum row and column number
 
-		int b;	// result
+		boolean b;	// result
 		int r;	// row component of location
 		int c;	// column component of location
 
@@ -402,6 +406,7 @@ public class Grid implements GridInterface, Cloneable
       	
         //COMPLETE ME
         // Why is b an int, should it not be a boolean????
+        b = true;
 
       	trace("validMove: validMove ends");
 		return b;

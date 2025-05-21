@@ -44,7 +44,17 @@ public class Square implements SquareInterface, Cloneable
 	{		
       	trace("Square: Constructor starts");
 
-        loc = l;
+		setLocation(l);
+		if ((l.getRow() + l.getColumn()) % 2 == 0)
+		{
+			// top-left or an even number of squares away
+			setBackground(Color.WHITE);
+		}
+		else
+		{
+			// an odd number of squares away from top-left
+			setBackground(Color.BLACK);
+		}
 
       	trace("Square: Constructor ends");
 	}
@@ -67,9 +77,8 @@ public class Square implements SquareInterface, Cloneable
 	public Square(Location l, Symbol s)
 	{
       	trace("Square: Constructor starts");
-
-        loc = l;
-        symbol = s;
+        
+        initialiseSquare(l, s);
 
       	trace("Square: Constructor ends");
 	}
@@ -123,7 +132,7 @@ public class Square implements SquareInterface, Cloneable
 	{		
       	trace("isEmpty: isEmpty starts and ends");
 
-        //COMPLETE ME
+        return (symbol == null);
 	}
 	
 	
@@ -257,9 +266,8 @@ public class Square implements SquareInterface, Cloneable
 		
       	trace("clone: clone starts");
 
-        s.setLocation(this.loc);
-        s.setSymbol(this.symbol);
-
+        s = new Square((Location)getLocation().clone(), (Symbol)getSymbol().clone());
+            
       	trace("clone: clone ends");
 		return s;
 	}
@@ -302,7 +310,9 @@ public class Square implements SquareInterface, Cloneable
 		g.setColor(getBackground());
 		g.fillRect((c+1) * 32 + 110, (r+1) * 32 + 50, w, w);
 		//draw the symbol
-		getSymbol().showSymbol(s);
+        if (!isEmpty()) { // TODO: NEEDED TO ADD THIS IF STAEMENT FOR SOME REASON
+            getSymbol().showSymbol(s);
+        }
 		
 		//reset back to black 
 		g.setColor(Color.BLACK);

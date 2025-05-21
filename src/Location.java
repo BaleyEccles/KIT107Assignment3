@@ -124,7 +124,7 @@ public class Location implements LocationInterface, Cloneable
 	{
       	trace("getColumn: getColumn starts and ends");
 
-        return column
+        return column;
 	}
 	
 	
@@ -144,8 +144,7 @@ public class Location implements LocationInterface, Cloneable
 		
       	trace("clone: clone starts");
 
-        l.setRow(this.row);
-        l.setColumn(this.column);
+        l = new Location(getRow(), getColumn());
 
       	trace("clone: clone ends");
 		return l;

@@ -204,8 +204,8 @@ public class Symbol implements SymbolInterface, Cloneable
 		
       	trace("clone: clone starts");
 
-        s.setIcon(s.getIcon());
-        s.setLocation(s.getLocation());
+        s = new Symbol(getIcon(), getLocation());
+
 		
       	trace("clone: clone ends");
 		return s;

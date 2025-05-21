@@ -185,7 +185,7 @@ public class GameTree implements GameTreeInterface
 	*/
 	public GameTree getSibling() throws EmptyGameTreeException
 	{
-		GameTree r;
+		GameTree r = null;
 		
 		trace("getSibling: getSibling starts");
 		
@@ -195,7 +195,7 @@ public class GameTree implements GameTreeInterface
 			throw new EmptyGameTreeException();
   		}
   		
-        r.setSibling(root.getSibling());
+        // Complete ME
 
 		trace("getSibling: getSibling ends");
 		return r;
@@ -252,7 +252,7 @@ public class GameTree implements GameTreeInterface
 			throw new EmptyGameTreeException();
   		}
   		
-        root.setLevel(l)
+        root.setLevel(l);
 		
 		trace("setLevel: setLevel ends");
 	}
@@ -308,8 +308,8 @@ public class GameTree implements GameTreeInterface
 			throw new EmptyGameTreeException();
 		}
 		  
-        root.setSibling(t);
-
+        root.setSibling(t.root);
+        
 		trace("setSibling: setSibling ends");
 	}
 	
@@ -374,7 +374,7 @@ public class GameTree implements GameTreeInterface
 	*/
 	public GameTree buildGameDF(Stack s, Symbol m, int d)
 	{
-		GameTree t;		// result
+		GameTree t = null;		// result
 		
 		trace("buildGameDF: buildGameDF starts");
 		
@@ -447,7 +447,7 @@ public class GameTree implements GameTreeInterface
 	*/
 	public GameTree buildGameBF(Queue q, Symbol m, int d)
 	{
-		GameTree t;		// result
+		GameTree t = null;		// result
 		
 		trace("buildGameBF: buildGameBF starts");
 		
