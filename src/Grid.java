@@ -64,7 +64,7 @@ public class Grid implements GridInterface, Cloneable
 	{
       	trace("Grid: Constructor starts");
       	
-//COMPLETE ME
+        dimension = d;
 		
       	trace("Grid: Constructor ends");		
 	}
@@ -170,7 +170,7 @@ public class Grid implements GridInterface, Cloneable
 		
       	trace("clone: clone starts");
       	
-//COMPLETE ME
+        b.dimension = dimension;
 				
       	trace("clone: clone ends");
 		return b;
@@ -279,7 +279,7 @@ public class Grid implements GridInterface, Cloneable
 	{
       	trace("setDimension: setDimension starts");
       	
-//COMPLETE ME
+        dimension = d;
 		
       	trace("setDimension: setDimension ends");
 	}
@@ -298,7 +298,7 @@ public class Grid implements GridInterface, Cloneable
 	public int getDimension()
 	{
       	trace("getDimension: getDimension starts and ends");
-//COMPLETE ME
+        return dimension;
 	}
 
 
@@ -334,7 +334,9 @@ public class Grid implements GridInterface, Cloneable
 		}
 		else
 		{
-//COMPLETE ME
+            m = s.clone();
+            m.setLocation(l);
+            q.setSymbol(m);
 		}
       	trace("occupySquare: occupySquare ends");
 	}
@@ -360,7 +362,17 @@ public class Grid implements GridInterface, Cloneable
 	public boolean squareOccupied(Location l)
 	{
       	trace("squareOccupied: squareOccupied starts and ends");
-//COMPLETE ME
+        for (int i = 0; i < board.length(); i++)
+        {
+            for (int j = 0; j < board[i].length(); i++)
+            {
+                if (board[i][j].getColumn() == l.getColumn() && board[i][j].getRow() == l.getRow())
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
 	}
 	
 	
@@ -388,7 +400,8 @@ public class Grid implements GridInterface, Cloneable
 
       	trace("validMove: validMove starts");
       	
-//COMPLETE ME
+        //COMPLETE ME
+        // Why is b an int, should it not be a boolean????
 
       	trace("validMove: validMove ends");
 		return b;
@@ -508,7 +521,18 @@ public class Grid implements GridInterface, Cloneable
 
 		trace("columnClear: columnClear starts");
 
-//COMPLETE ME
+		c = l.getColumn();
+		for (int r = MINIMUM; r <= dimension; r++)
+		{
+			// check location given by row and column
+			l1 = new Location(r, c);
+			if (squareOccupied(l1))
+			{
+				// found a symbol and so column isn't clear
+				trace("columnClear: columnClear finishes with false");
+				return false;
+			}
+		}
 
 		trace("columnClear: columnClear finishes with true");
 		return true;
