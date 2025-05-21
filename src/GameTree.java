@@ -185,7 +185,7 @@ public class GameTree implements GameTreeInterface
 	*/
 	public GameTree getSibling() throws EmptyGameTreeException
 	{
-		GameTree r = null;
+		GameTree r;
 		
 		trace("getSibling: getSibling starts");
 		
@@ -194,8 +194,9 @@ public class GameTree implements GameTreeInterface
 			trace("getSibling: empty game tree");
 			throw new EmptyGameTreeException();
   		}
-  		
-        // Complete ME
+        
+        r = new GameTree(root.getSibling().getData(), root.getSibling().getLevel());
+
 
 		trace("getSibling: getSibling ends");
 		return r;
@@ -341,7 +342,28 @@ public class GameTree implements GameTreeInterface
 	
 		trace("generateLevelDF: generateLevelDF starts");
 		
-//COMPLETE ME
+        //COMPLETE ME: Done I think
+        b1 = (Grid)root.getData();
+        d = b1.getDimension();
+        
+        v = getData().getLevel() + 1;
+        
+        for (int r = MINIMUM; r <= dimension; r++)
+		{
+			for (int c = MINIMUM; c <= dimension; c++)
+			{
+				l = new Location(r, c);
+                if (!clash(l) && !squareOccupied(l))
+                {
+                    b2 = b1.clone();
+                    bNew.occupySquare(l, m);
+                    t = new GameTree(bNew, v);
+                    s.push(t);
+                    setChild(t);
+                }
+            }
+        }
+        
 		
 		trace("generateLevelDF: generateLevelDF ends");
 	}
@@ -413,7 +435,8 @@ public class GameTree implements GameTreeInterface
 
 		trace("generateLevelBF: generateLevelBF starts");
 		
-//COMPLETE ME
+        //COMPLETE ME
+        
 		
 		trace("generateLevelBF: generateLevelBF ends");
 	}
@@ -451,7 +474,7 @@ public class GameTree implements GameTreeInterface
 		
 		trace("buildGameBF: buildGameBF starts");
 		
-//COMPLETE ME
+        //COMPLETE ME
 
 		trace("buildGameBF: buildGameBF ends");
 

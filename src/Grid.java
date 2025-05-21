@@ -347,8 +347,9 @@ public class Grid implements GridInterface, Cloneable
 		}
 		else
 		{
-            // Complete me
-            
+            m = (Symbol)s.clone();
+            q = new Square(l, m);
+            board[l.getRow() - 1][l.getColumn() - 1] = q;
 		}
       	trace("occupySquare: occupySquare ends");
 	}
@@ -374,8 +375,8 @@ public class Grid implements GridInterface, Cloneable
 	public boolean squareOccupied(Location l)
 	{
       	trace("squareOccupied: squareOccupied starts and ends");
-        //COMPLETE ME
-        return false;
+        
+        return !(board[l.getRow() - 1][l.getColumn() - 1].isEmpty());
 
 	}
 	
@@ -404,9 +405,18 @@ public class Grid implements GridInterface, Cloneable
 
       	trace("validMove: validMove starts");
       	
-        //COMPLETE ME
-        // Why is b an int, should it not be a boolean????
+        r = l.getRow();
+        c = l.getColumn();
+        
         b = true;
+        if (r < MINIMUM || c < MINIMUM)
+        {
+            b = false;
+        }
+        if (r > dimension || c > dimension)
+        {
+            b = false;
+        }
 
       	trace("validMove: validMove ends");
 		return b;
