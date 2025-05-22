@@ -4,3 +4,4 @@ run: link
 
 link:
 	javac ./src/*.java 
+hittest
