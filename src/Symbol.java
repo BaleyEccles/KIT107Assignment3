@@ -21,7 +21,7 @@ import java.awt.image.*;
 public class Symbol implements SymbolInterface, Cloneable
 {
 	// finals (i.e. all objects have their own value)
-	protected final boolean TRACING = false;		// do we want to see trace output?
+	protected final boolean TRACING = true;		// do we want to see trace output?
 	
 	// properties
 	protected Image icon;	// the representation of the queen
@@ -40,9 +40,6 @@ public class Symbol implements SymbolInterface, Cloneable
 	public Symbol()
 	{
       	trace("Symbol: Constructor starts");
-
-		setIcon(null);
-		setLocation(null);
 
       	trace("Symbol: Constructor ends");
 	}
@@ -63,8 +60,7 @@ public class Symbol implements SymbolInterface, Cloneable
 	public Symbol(Location l)
 	{
       	trace("Symbol: Constructor starts");
-
-		setIcon(null);
+        
 		setLocation(l);
 
       	trace("Symbol: Constructor ends");

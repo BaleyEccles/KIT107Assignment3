@@ -17,7 +17,7 @@
 public class GameTree implements GameTreeInterface
 {
 	// finals
-	protected final boolean TRACING = false;	// do we want to see trace output?
+	protected final boolean TRACING = true;	// do we want to see trace output?
 
 	// properties
 	protected TNode root;						// the node at the top of the tree
@@ -401,23 +401,26 @@ public class GameTree implements GameTreeInterface
 		trace("buildGameDF: buildGameDF starts");
 		
         //COMPLETE ME TODO 
-        if (isEmpty() || getLevel() == d)
+        if (isEmpty())
         {
-        }    
-        else
-        {
-
-            generateLevelDF(s, m);
-            if (!s.isEmpty())
-            {
-                t = s.pop();
-                
-            }
+            t = new GameTree();
+            trace("buildGameDF: buildGameDF ends 1");
+            return t;
         }
+        else if (getLevel() == d)
+        {
+            t = this;
+            trace("buildGameDF: buildGameDF ends 2");
+            return t;
+        }
+        
+        generateLevelDF(s, m);
+        t = (GameTree)s.top();
+        t.buildGameDF(s, m, d);
 
-		trace("buildGameDF: buildGameDF ends");
+		trace("buildGameDF: buildGameDF ends 3");
 
-		return t;
+        return t;
 	}
 	
 	

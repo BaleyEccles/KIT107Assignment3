@@ -20,7 +20,7 @@ import java.awt.*;
 public class Square implements SquareInterface, Cloneable
 {	
 	//finals
-	protected final boolean TRACING = false;		// do we want to see trace output?
+	protected final boolean TRACING = true;		// do we want to see trace output?
 
 	// properties
 	protected Location loc;			// the location of the current square within the grid
@@ -44,18 +44,10 @@ public class Square implements SquareInterface, Cloneable
 	{		
       	trace("Square: Constructor starts");
 
-		setLocation(l);
-		if ((l.getRow() + l.getColumn()) % 2 == 0)
-		{
-			// top-left or an even number of squares away
-			setBackground(Color.WHITE);
-		}
-		else
-		{
-			// an odd number of squares away from top-left
-			setBackground(Color.BLACK);
-		}
-
+        initialiseSquare(l, null);
+        Symbol s = new Symbol(l);
+        setSymbol(s);
+        
       	trace("Square: Constructor ends");
 	}
 	
@@ -132,7 +124,7 @@ public class Square implements SquareInterface, Cloneable
 	{		
       	trace("isEmpty: isEmpty starts and ends");
 
-        return (symbol == null);
+        return (getSymbol() == null);
 	}
 	
 	
@@ -310,10 +302,8 @@ public class Square implements SquareInterface, Cloneable
 		g.setColor(getBackground());
 		g.fillRect((c+1) * 32 + 110, (r+1) * 32 + 50, w, w);
 		//draw the symbol
-        if (!isEmpty()) { // TODO: NEEDED TO ADD THIS IF STAEMENT FOR SOME REASON
-            getSymbol().showSymbol(s);
-        }
-		
+
+        getSymbol().showSymbol(s);
 		//reset back to black 
 		g.setColor(Color.BLACK);
 		
