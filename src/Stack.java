@@ -17,7 +17,7 @@
 public class Stack implements StackInterface
 {
 	//finals
-	protected final boolean TRACING = true;				// do we want to see trace output?
+	protected final boolean TRACING = false;				// do we want to see trace output?
 
 	// properties
 	protected Node tos;		// the node on the top of the stack
@@ -113,7 +113,7 @@ public class Stack implements StackInterface
 		{
 			// top value exists
 	      	trace("top: top ends");
-            return tos;
+            return tos.getData();
 		}
 	}
 
@@ -145,6 +145,7 @@ public class Stack implements StackInterface
 			// top value exists
 	      	trace("pop: adjusting top of stack");
             tos = tos.getNext();
+            size--;
 		}
 		
       	trace("pop: pop ends");

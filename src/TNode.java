@@ -19,7 +19,7 @@
 public class TNode implements TNodeInterface
 {
 	//finals
-	protected final boolean TRACING = true;				// do we want to see trace output?
+	protected final boolean TRACING = false;				// do we want to see trace output?
 
 	// properties
 	protected Object data;		// the value stored in the node (a Grid)
