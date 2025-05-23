@@ -38,7 +38,7 @@ public class Display implements DisplayInterface
 		trace("Display: constructor begins");
 		
 		graphics = null;
-		
+        
 		trace("Display: constructor ends");
 	}
 	

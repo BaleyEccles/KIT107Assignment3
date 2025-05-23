@@ -352,15 +352,24 @@ public class GameTree implements GameTreeInterface
 		{
 			for (int c = MINIMUM; c <= d; c++)
 			{
+                System.out.println("Checking " + r + ", " + c);
 				l = new Location(r, c);
-                if (!b1.clash(l) && !b1.squareOccupied(l))
+                if (b1.clash(l)) {
+                    System.out.println("Clash at " + r + ", " + c);
+                }
+                if (b1.squareOccupied(l)) {
+                    System.out.println("occupied at " + r + ", " + c);
+                }
+                if (!b1.clash(l))
                 {
                     b2 = (Grid)b1.clone();
                     b2.occupySquare(l, m);
                     t = new GameTree(b2, v);
                     s.push(t);
+                    System.out.println("Stack after pushing " + s.size);
                     setChild(t);
                 }
+                System.out.println("Stack Size " + s.size);
             }
         }
         
@@ -412,12 +421,16 @@ public class GameTree implements GameTreeInterface
             t = this;
             trace("buildGameDF: buildGameDF ends 2");
             return t;
+        } else
+        {
+            trace("buildGameDF: buildGameDF generateLevelDF");
+            generateLevelDF(s, m);
+            t = (GameTree)s.top();
+            t.buildGameDF(s, m, d);
+            System.out.println("Stack Size2 " + s.size);
         }
+        System.out.println("Stack Size3 " + s.size);
         
-        generateLevelDF(s, m);
-        t = (GameTree)s.top();
-        t.buildGameDF(s, m, d);
-
 		trace("buildGameDF: buildGameDF ends 3");
 
         return t;

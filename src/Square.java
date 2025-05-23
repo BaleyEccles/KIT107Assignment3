@@ -124,7 +124,7 @@ public class Square implements SquareInterface, Cloneable
 	{		
       	trace("isEmpty: isEmpty starts and ends");
 
-        return (getSymbol() == null);
+        return (getSymbol().isEmpty());
 	}
 	
 	

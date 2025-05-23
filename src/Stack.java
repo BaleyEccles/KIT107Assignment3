@@ -21,7 +21,7 @@ public class Stack implements StackInterface
 
 	// properties
 	protected Node tos;		// the node on the top of the stack
-
+    public int size = 0;
 
 	/**
 	 *	Stack
@@ -173,6 +173,7 @@ public class Stack implements StackInterface
         
         n = new Node(o);
         tos = n;
+        size++;
 
       	trace("push: push ends");
 	}
