@@ -39,12 +39,12 @@ public class Location implements LocationInterface, Cloneable
 	*/
 	public Location(int r, int c)
 	{
-      	trace("Location: Constructor starts");
+      		trace("Location: Constructor starts");
         
-        setRow(r);
-        setColumn(c);
+        	setRow(r);
+        	setColumn(c);
 
-      	trace("Location: Constructor ends");
+      		trace("Location: Constructor ends");
 	}
 	
 	
@@ -61,11 +61,11 @@ public class Location implements LocationInterface, Cloneable
 	*/
 	public void setRow(int r)
 	{
-      	trace("setRow: setRow starts");
-
-        row = r;
-
-      	trace("setRow: setRow ends");
+	      	trace("setRow: setRow starts");
+	
+	        row = r;
+	
+	      	trace("setRow: setRow ends");
 	}
 	
 	
@@ -82,11 +82,11 @@ public class Location implements LocationInterface, Cloneable
 	*/
 	public void setColumn(int c)
 	{
-      	trace("setColumn: setColumn starts");
-
-        column = c;
-
-      	trace("setColumn: setColumn ends");
+	      	trace("setColumn: setColumn starts");
+	
+	        column = c;
+	
+	      	trace("setColumn: setColumn ends");
 	}
 	
 	
@@ -103,9 +103,9 @@ public class Location implements LocationInterface, Cloneable
 	*/
 	public int getRow()
 	{
-      	trace("getRow: getRow starts and ends");
-
-        return row;
+	      	trace("getRow: getRow starts and ends");
+	
+	        return row;
 	}
 	
 	
@@ -122,9 +122,9 @@ public class Location implements LocationInterface, Cloneable
 	*/
 	public int getColumn()
 	{
-      	trace("getColumn: getColumn starts and ends");
-
-        return column;
+	      	trace("getColumn: getColumn starts and ends");
+	
+	        return column;
 	}
 	
 	
@@ -142,11 +142,11 @@ public class Location implements LocationInterface, Cloneable
 	{
 		Location l;
 		
-      	trace("clone: clone starts");
-
-        l = new Location(getRow(), getColumn());
-
-      	trace("clone: clone ends");
+	      	trace("clone: clone starts");
+	
+	        l = new Location(getRow(), getColumn());
+	
+	      	trace("clone: clone ends");
 		return l;
 	}
 	
