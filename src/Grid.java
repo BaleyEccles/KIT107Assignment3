@@ -39,14 +39,14 @@ public class Grid implements GridInterface, Cloneable
 	{
 		final int DEFAULT_SIZE = 8;	// the default grid size
 
-      	trace("Grid: Constructor starts");
+      		trace("Grid: Constructor starts");
 
 		// initialise dimension
 		dimension = DEFAULT_SIZE;
 		// initialise board		
 		initialiseGrid();
         
-      	trace("Grid: Constructor ends");
+      		trace("Grid: Constructor ends");
 	}
 	
 	
@@ -62,12 +62,12 @@ public class Grid implements GridInterface, Cloneable
 	*/
 	public Grid(int d)
 	{
-      	trace("Grid: Constructor starts");
+      		trace("Grid: Constructor starts");
       	
-        setDimension(d);
-        initialiseGrid();
+        	setDimension(d);
+        	initialiseGrid();
 		
-      	trace("Grid: Constructor ends");		
+      		trace("Grid: Constructor ends");		
 	}
 	
 	
@@ -94,11 +94,11 @@ public class Grid implements GridInterface, Cloneable
 	*/
 	public Grid(int d, Location l, Symbol s) throws IllegalGridException
 	{
-      	trace("Grid: Constructor starts");
+      		trace("Grid: Constructor starts");
 
 		// create an empty grid of required size
 		setDimension(d);
-        initialiseGrid();
+        	initialiseGrid();
 
 		// add the queen to the empty grid (unless it is illegal)
 		if (validMove(l))
@@ -112,7 +112,7 @@ public class Grid implements GridInterface, Cloneable
 			throw new IllegalGridException();
 		}
 
-      	trace("Grid: Constructor ends");
+      		trace("Grid: Constructor ends");
 	}
 	
 	
@@ -132,7 +132,7 @@ public class Grid implements GridInterface, Cloneable
 
 		Location l;				// a location value to iterate through the squares
 		
-      	trace("initialiseGrid: initialiseGrid starts");
+      		trace("initialiseGrid: initialiseGrid starts");
       	
 		// instantiate the table (array of arrays)
 		board = new Square[dimension][dimension];
@@ -147,7 +147,7 @@ public class Grid implements GridInterface, Cloneable
 			}
 		}
 		
-      	trace("initialiseGrid: initialiseGrid ends");		
+      		trace("initialiseGrid: initialiseGrid ends");		
 	}
 	
 	
@@ -169,11 +169,11 @@ public class Grid implements GridInterface, Cloneable
 		Location l;				// a location value to iterate through the squares
 		Symbol s;				// the symbol of the 'current' square
 		
-      	trace("clone: clone starts");
+      		trace("clone: clone starts");
 
-        b = new Grid(getDimension());
+        	b = new Grid(getDimension());
         
-        for (int r = MINIMUM; r <= dimension; r++)
+        	for (int r = MINIMUM; r <= dimension; r++)
 		{
 			for (int c = MINIMUM; c <= dimension; c++)
 			{
@@ -185,7 +185,7 @@ public class Grid implements GridInterface, Cloneable
             }
         }
 				
-      	trace("clone: clone ends");
+      		trace("clone: clone ends");
 		return b;
 	}
 	
@@ -210,7 +210,7 @@ public class Grid implements GridInterface, Cloneable
 		int r;	// row component of location
 		int c;	// column component of location
 		
-      	trace("setSquare: setSquare starts");
+      		trace("setSquare: setSquare starts");
       	
 		// is it on the board?
 		if (! validMove(l))
@@ -230,7 +230,7 @@ public class Grid implements GridInterface, Cloneable
 			board[r-1][c-1] = s;
 		}
 
-      	trace("setSquare: setSquare ends");
+      		trace("setSquare: setSquare ends");
 	}
 
 
@@ -257,7 +257,7 @@ public class Grid implements GridInterface, Cloneable
 		int r;	// row component of location
 		int c;	// column component of location
 
-      	trace("getSquare: getSquare starts");
+      		trace("getSquare: getSquare starts");
 
 		// is it on the board?
 		if (! validMove(l))
@@ -290,11 +290,11 @@ public class Grid implements GridInterface, Cloneable
 	*/
 	public void setDimension(int d)
 	{
-      	trace("setDimension: setDimension starts");
+      		trace("setDimension: setDimension starts");
       	
-        dimension = d;
+        	dimension = d;
 		
-      	trace("setDimension: setDimension ends");
+      		trace("setDimension: setDimension ends");
 	}
 
 
@@ -310,8 +310,8 @@ public class Grid implements GridInterface, Cloneable
 	*/
 	public int getDimension()
 	{
-      	trace("getDimension: getDimension starts and ends");
-        return dimension;
+      		trace("getDimension: getDimension starts and ends");
+        	return dimension;
 	}
 
 
@@ -336,7 +336,7 @@ public class Grid implements GridInterface, Cloneable
 		Square q;	// square at given Location in current Grid
 		Symbol m;	// clone of given Symbol
  
-      	trace("occupySquare: occupySquare starts");
+      		trace("occupySquare: occupySquare starts");
 
 		// is it on the board?
 		if (! validMove(l))
@@ -347,13 +347,13 @@ public class Grid implements GridInterface, Cloneable
 		}
 		else
 		{
-            m = (Symbol)s.clone();
-            m.setLocation(l);
-            q = board[l.getRow() - 1][l.getColumn() - 1];
-            q.setSymbol(m);
+            		m = (Symbol)s.clone();
+            		m.setLocation(l);
+            		q = board[l.getRow() - 1][l.getColumn() - 1];
+            		q.setSymbol(m);
             
 		}
-      	trace("occupySquare: occupySquare ends");
+      		trace("occupySquare: occupySquare ends");
 	}
 
 
@@ -376,16 +376,16 @@ public class Grid implements GridInterface, Cloneable
 	*/
 	public boolean squareOccupied(Location l)
 	{
-      	trace("squareOccupied: squareOccupied starts and ends");
+      		trace("squareOccupied: squareOccupied starts and ends");
 
-        if (! validMove(l))
+        	if (! validMove(l))
 		{
 			// no, it's not
 			trace("occupySquare: location not on the grid");
 			throw new IllegalGridException();
 		}
         
-        return !(board[l.getRow() - 1][l.getColumn() - 1].isEmpty());
+        	return !(board[l.getRow() - 1][l.getColumn() - 1].isEmpty());
 
 	}
 	
@@ -412,22 +412,22 @@ public class Grid implements GridInterface, Cloneable
 		int r;	// row component of location
 		int c;	// column component of location
 
-      	trace("validMove: validMove starts");
+      		trace("validMove: validMove starts");
       	
-        r = l.getRow();
-        c = l.getColumn();
+        	r = l.getRow();
+        	c = l.getColumn();
         
-        b = true;
-        if (r < MINIMUM || c < MINIMUM)
-        {
-            b = false;
-        }
-        if (r > getDimension() || c > getDimension())
-        {
-            b = false;
-        }
+        	b = true;
+        	if (r < MINIMUM || c < MINIMUM)
+        	{
+            		b = false;
+        	}
+       	 	if (r > getDimension() || c > getDimension())
+        	{
+           		b = false;
+        	}
 
-      	trace("validMove: validMove ends");
+      		trace("validMove: validMove ends");
 		return b;
 	}
 
@@ -453,7 +453,7 @@ public class Grid implements GridInterface, Cloneable
   		Location l;	// location to check
 		boolean f;	// result
   
-      	trace("solved: solved starts");
+      		trace("solved: solved starts");
 
 		// check every square on the grid
 		for (int r = MINIMUM; r <= dimension; r++)
@@ -478,7 +478,7 @@ public class Grid implements GridInterface, Cloneable
 			}
 		}
 		
-      	trace("solved: solved ends with a symbol on all rows");		
+      		trace("solved: solved ends with a symbol on all rows");		
   		return true;
 	}
 
@@ -713,7 +713,7 @@ public class Grid implements GridInterface, Cloneable
 			s += "\n";
 		}
 		
-      	trace("toString: toString ends");
+      		trace("toString: toString ends");
 		return s;
 	}
 
@@ -737,7 +737,7 @@ public class Grid implements GridInterface, Cloneable
 		Graphics g;	// the graphics context of the given Display
 		Square q;	// the Square iterated through
 		
-      	trace("showGrid: showGrid starts");
+      		trace("showGrid: showGrid starts");
 
 		// get the graphcs context for painting
 		g = s.getGraphics();
@@ -764,7 +764,7 @@ public class Grid implements GridInterface, Cloneable
 
 		trace("showGrid: grid is " + toString());
 
-      	trace("showGrid: showGrid ends");
+      		trace("showGrid: showGrid ends");
  	}
  	
 
