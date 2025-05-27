@@ -34,11 +34,11 @@ public class Stack implements StackInterface
 	*/
 	public Stack()
 	{
-      	trace("Stack: Constructor ends");
+		trace("Stack: Constructor ends");
 
 		tos = null;
 
-      	trace("Stack: Constructor ends");
+		trace("Stack: Constructor ends");
 	}
 
 
@@ -57,11 +57,11 @@ public class Stack implements StackInterface
 	*/
 	public Stack(Object o)
 	{
-      	trace("Stack: Constructor ends");
+	      	trace("Stack: Constructor ends");
 
 		tos = new Node(o);
 
-      	trace("Stack: Constructor ends");
+	      	trace("Stack: Constructor ends");
 	}
 	
 	
@@ -78,8 +78,8 @@ public class Stack implements StackInterface
 	*/
 	public boolean isEmpty()
 	{
-      	trace("isEmpty: isEmpty starts and ends");
-        return (tos == null);
+	      	trace("isEmpty: isEmpty starts and ends");
+	        return (tos == null);
 	}
 
 
@@ -97,7 +97,7 @@ public class Stack implements StackInterface
 	*/
 	public Object top() throws EmptyStackException
 	{
-      	trace("top: top starts");
+	      	trace("top: top starts");
 
 		if (isEmpty())
 		{
@@ -108,8 +108,8 @@ public class Stack implements StackInterface
 		else
 		{
 			// top value exists
-	      	trace("top: top ends");
-            return tos.getData();
+		      	trace("top: top ends");
+		        return tos.getData();
 		}
 	}
 
@@ -128,23 +128,23 @@ public class Stack implements StackInterface
 	*/
 	public void pop() throws EmptyStackException
 	{
-      	trace("pop: pop starts");
+	      	trace("pop: pop starts");
 
 		if (isEmpty())
 		{
 			// no top value exists!
- 	     	trace("pop: empty stack");
+	 	     	trace("pop: empty stack");
 			throw new EmptyStackException();
 		}
 		else
 		{
 			// top value exists
-	      	trace("pop: adjusting top of stack");
-            tos = tos.getNext();
-            size--;
+			trace("pop: adjusting top of stack");
+			tos = tos.getNext();
+		        size--;
 		}
 		
-      	trace("pop: pop ends");
+	      	trace("pop: pop ends");
 	}
 
 
@@ -166,15 +166,15 @@ public class Stack implements StackInterface
 	{
 		Node n;	// new node for value to be added
 		
-      	trace("push: push starts");
-        
-        n = new Node(o);
-        
-        n.setNext(tos);
-        tos = n;
-        size++;
-
-      	trace("push: push ends");
+	      	trace("push: push starts");
+	        
+	        n = new Node(o);
+	        
+	        n.setNext(tos);
+	        tos = n;
+	        size++;
+	
+	      	trace("push: push ends");
 	}
 	
 	
@@ -196,12 +196,12 @@ public class Stack implements StackInterface
 		Node c;		// node for traversing the linked list
 		String s;	// result
 		
-      	trace("toString: toString starts");
+	      	trace("toString: toString starts");
 
 		if (isEmpty())
 		{
 			// nothing in stack
-  	    	trace("toString: toString ends empty");
+	  	    	trace("toString: toString ends empty");
 			s = "<>";
 		}
 		else
@@ -214,7 +214,7 @@ public class Stack implements StackInterface
 				s += (c.getData().toString() + " ");
 				c = c.getNext();
 			}
-	      	trace("toString: toString ends non-empty");
+		      	trace("toString: toString ends non-empty");
 		}
 		
 		return s;
