@@ -21,7 +21,7 @@ public class Queue implements QueueInterface
 
 	// properties
 	protected Node first;		// the node at the front of the queue
-    public int size = 0;
+	public int size = 0;		// the size of the queue
 
 	/*
 	 *	Queue
@@ -80,7 +80,7 @@ public class Queue implements QueueInterface
 	{
 	   	trace("isEmpty: isEmpty starts and ends");
         
-        return (first == null);
+	        return (first == null);
 	}
 
 
@@ -110,7 +110,7 @@ public class Queue implements QueueInterface
 		{
 			// first value exists
 		   	trace("front: front ends");
-            return first.getData();
+            		return first.getData();
 		}
 	}
 
@@ -141,10 +141,10 @@ public class Queue implements QueueInterface
 		{
 			// first value exists
 		   	trace("remove: updating first node");
-            first = first.getNext();
-            size--;
+	            first = first.getNext();
+	            size--;
 		}
-
+		
 	   	trace("remove: remove ends");
 	}
 
@@ -172,29 +172,29 @@ public class Queue implements QueueInterface
 		
 	   	trace("add: add starts");
         
-        n = new Node(o);
-        c = first;
-        if (isEmpty())
-        {
-            first = n;
-        }
-        else
-        {
-            boolean cont = true;
-            while (cont)
-            {
+	        n = new Node(o);
+	        c = first;
+	        if (isEmpty())
+	        {
+	            first = n;
+	        }
+	        else
+	        {
+	            boolean cont = true;
+	            while (cont)
+	            {
+	
+	                if (c.getNext() == null)
+	                {
+	                	c.setNext(n);
+                    		cont = false;
+                	}
+                	c = c.getNext();
 
-                if (c.getNext() == null)
-                {
-                    c.setNext(n);
-                    cont = false;
-                }
-                c = c.getNext();
-
-            }
+            		}
             
-        }
-        size++;
+        	}
+       		size++;
             
 	   	trace("add: add ends");
 	}
