@@ -350,26 +350,26 @@ public class GameTree implements GameTreeInterface
         	v = getLevel() + 1;
         
        		for (int r = MINIMUM; r <= d; r++)
+		{
+			for (int c = MINIMUM; c <= d; c++)
 			{
-				for (int c = MINIMUM; c <= d; c++)
-				{
-					l = new Location(r, c);
-                			if (b1.clash(l)) {
-                			}
-                			if (b1.squareOccupied(l)) {
-                			}
-                			if (!b1.clash(l) && !b1.squareOccupied(l))
-                			{
-                    				b2 = (Grid)b1.clone();
-                    				b2.occupySquare(l, m);
+				l = new Location(r, c);
+                		if (b1.clash(l)) {
+                		}
+                		if (b1.squareOccupied(l)) {
+                		}
+                		if (!b1.clash(l) && !b1.squareOccupied(l))
+        			{
+            				b2 = (Grid)b1.clone();
+					b2.occupySquare(l, m);
                     
-                    				t = new GameTree(b2, v);
-                    				s.push(t);
-                    				this.setChild(t);
+                    			t = new GameTree(b2, v);
+                    			s.push(t);
+                    			this.setChild(t);
                     
-                			}
-           	 		}
-        		}
+        			}
+   	 		}
+        	}
 		trace("generateLevelDF: generateLevelDF ends");
 	}
 	
@@ -418,26 +418,27 @@ public class GameTree implements GameTreeInterface
             		trace("buildGameDF: buildGameDF ends 2");
             		// Clear the stack because we have found a solution and there is no reasone to continue
             		while (!s.isEmpty())
-            	{
-                s.pop();
-            }
-            return t;
-        }
+            		{
+                	s.pop();
+            		}
+            		return t;
+        	}
 
 
-        trace("buildGameDF: buildGameDF generateLevelDF");
-        generateLevelDF(s, m);        
+        	trace("buildGameDF: buildGameDF generateLevelDF");
+        	generateLevelDF(s, m);        
 
 
-        while (!s.isEmpty()) {
-            t = (GameTree)(s.top());
-            s.pop();
-            t = t.buildGameDF(s, m, d);
-        }
+        	while (!s.isEmpty()) 
+		{
+	        	t = (GameTree)(s.top());
+	        	s.pop();
+	        	t = t.buildGameDF(s, m, d);
+        	}
         
 		trace("buildGameDF: buildGameDF ends 3");
 
-        return t;
+        	return t;
 	}
 	
 	
@@ -544,21 +545,22 @@ public class GameTree implements GameTreeInterface
             		t = this;
             		// Clear the queue because we have found a solution and there is no reasone to continue
             		while (!q.isEmpty())
-            	{
-                q.remove();
-            }
-            return t;
-        }
+            		{
+                		q.remove();
+            		}
+            		return t;
+        	}
 
 
-        generateLevelBF(q, m);        
+        	generateLevelBF(q, m);        
 
 
-        while (!q.isEmpty()) {
-            t = (GameTree)(q.front());
-            q.remove();
-            t = t.buildGameBF(q, m, d);
-        }
+        	while (!q.isEmpty()) 
+		{
+            		t = (GameTree)(q.front());
+	            	q.remove();
+	           	t = t.buildGameBF(q, m, d);
+        	}
 
 		trace("buildGameBF: buildGameBF ends");
 
