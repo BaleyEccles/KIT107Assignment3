@@ -12,7 +12,7 @@
  *	Squares in the board.
  *	
  *	This file is complete.
-*/
+ */
 
 
 public interface GridInterface

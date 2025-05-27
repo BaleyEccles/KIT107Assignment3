@@ -10,7 +10,7 @@
  *	A Location consists of a row number and a column number.
  *	
  *	YOU NEED TO MAKE CHANGES TO THIS FILE!
-*/
+ */
 
 
 public class Location implements LocationInterface, Cloneable
@@ -36,15 +36,15 @@ public class Location implements LocationInterface, Cloneable
 	 *
 	 *	@param r the row number
 	 *	@param c the column number
-	*/
+     */
 	public Location(int r, int c)
 	{
-      		trace("Location: Constructor starts");
+        trace("Location: Constructor starts");
         
-        	setRow(r);
-        	setColumn(c);
+        setRow(r);
+        setColumn(c);
 
-      		trace("Location: Constructor ends");
+        trace("Location: Constructor ends");
 	}
 	
 	
@@ -58,14 +58,14 @@ public class Location implements LocationInterface, Cloneable
 	 *				object's vertical component instance variable
 	 *
 	 *	@param r the row number
-	*/
+     */
 	public void setRow(int r)
 	{
-	      	trace("setRow: setRow starts");
+        trace("setRow: setRow starts");
 	
-	        row = r;
+        row = r;
 	
-	      	trace("setRow: setRow ends");
+        trace("setRow: setRow ends");
 	}
 	
 	
@@ -79,14 +79,14 @@ public class Location implements LocationInterface, Cloneable
 	 *				object's horizontal component instance variable
 	 *
 	 *	@param c the column number
-	*/
+     */
 	public void setColumn(int c)
 	{
-	      	trace("setColumn: setColumn starts");
+        trace("setColumn: setColumn starts");
 	
-	        column = c;
+        column = c;
 	
-	      	trace("setColumn: setColumn ends");
+        trace("setColumn: setColumn ends");
 	}
 	
 	
@@ -100,12 +100,12 @@ public class Location implements LocationInterface, Cloneable
 	 *				instance variable returning its value
 	 *
 	 *	@return int the row number
-	*/
+     */
 	public int getRow()
 	{
-	      	trace("getRow: getRow starts and ends");
+        trace("getRow: getRow starts and ends");
 	
-	        return row;
+        return row;
 	}
 	
 	
@@ -119,12 +119,12 @@ public class Location implements LocationInterface, Cloneable
 	 *				instance variable returning its value
 	 *
 	 *	@return int the column number
-	*/
+     */
 	public int getColumn()
 	{
-	      	trace("getColumn: getColumn starts and ends");
+        trace("getColumn: getColumn starts and ends");
 	
-	        return column;
+        return column;
 	}
 	
 	
@@ -137,16 +137,16 @@ public class Location implements LocationInterface, Cloneable
 	 *	Informally: create a copy of the current object
 	 *
 	 *	@return Object the copied Location
-	*/
+     */
 	public Object clone()
 	{
 		Location l;
 		
-	      	trace("clone: clone starts");
+        trace("clone: clone starts");
 	
-	        l = new Location(getRow(), getColumn());
+        l = new Location(getRow(), getColumn());
 	
-	      	trace("clone: clone ends");
+        trace("clone: clone ends");
 		return l;
 	}
 	
@@ -161,7 +161,7 @@ public class Location implements LocationInterface, Cloneable
 	 *				location
 	 *
 	 *	@return String the printable form of the Location
-	*/
+     */
 	public String toString()
 	{
       	trace("toString: toString starts and ends");
@@ -179,7 +179,7 @@ public class Location implements LocationInterface, Cloneable
 	 *	Informally: show the given message for tracing purposes
 	 *
 	 *	@param s String to display as a trace message
-	*/
+     */
 	protected void trace(String s)
 	{
 		if (TRACING)

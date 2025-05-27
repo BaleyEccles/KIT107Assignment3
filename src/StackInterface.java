@@ -11,7 +11,7 @@
  *	object.
  *	
  *	This file is complete.
-*/
+ */
 
 
 public interface StackInterface

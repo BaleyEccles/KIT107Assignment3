@@ -11,7 +11,7 @@
  *	"root" field which refers to a TNode object.
  *	
  *	This file is complete.
-*/
+ */
 
 
 public interface GameTreeInterface

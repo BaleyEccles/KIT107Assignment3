@@ -11,7 +11,7 @@
  *	queen and Location.
  *	
  *	This file is complete.
-*/
+ */
 
 
 import java.awt.Image;

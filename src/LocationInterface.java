@@ -10,7 +10,7 @@
  *	A Location consists of a row number and a column number.
  *	
  *	This file is complete.
-*/
+ */
 
 
 public interface LocationInterface

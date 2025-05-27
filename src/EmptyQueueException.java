@@ -13,7 +13,7 @@
  *	front()/remove().
  *	
  *	This file is complete.
-*/
+ */
 
 
 public class EmptyQueueException extends RuntimeException {

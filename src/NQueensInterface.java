@@ -11,7 +11,7 @@
  *	interface and interaction from the user.
  *	
  *	This file is complete.
-*/
+ */
 
 
 import java.awt.*;

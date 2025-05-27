@@ -13,7 +13,7 @@
  *	top() or pop().
  *	
  *	This file is complete.
-*/
+ */
 
 
 public class EmptyStackException extends RuntimeException {

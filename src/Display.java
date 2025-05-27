@@ -10,7 +10,7 @@
  *	represented by a graphics context (Graphics).
  *	
  *	This file is complete.
-*/
+ */
 
 
 import java.awt.*;
@@ -32,7 +32,7 @@ public class Display implements DisplayInterface
 	 *	Post-condition: the Display object's "graphics" instance
 	 *					variable is set to null
 	 *	Informally: intialises the graphics window to null
-	*/
+     */
 	public Display()
 	{
 		trace("Display: constructor begins");
@@ -52,7 +52,7 @@ public class Display implements DisplayInterface
 	 *	Informally: assign a graphics window value to the object
 	 *
 	 *  @param g graphics context
-	*/
+     */
 	public void setGraphics(Graphics g)
 	{
 		trace("setGraphics: setGraphics starts");
@@ -73,7 +73,7 @@ public class Display implements DisplayInterface
 	 *				instance variable returning its value
 	 *
 	 *	@return Graphics graphics context
-	*/
+     */
 	public Graphics getGraphics()
 	{
 		trace("getGraphics: getGraphics starts and ends");
@@ -90,7 +90,7 @@ public class Display implements DisplayInterface
 	 *	Informally: show the given message for tracing purposes
 	 *
 	 *	@param s String to display as trace output
-	*/
+     */
 	protected void trace(String s)
 	{
 		if (TRACING)

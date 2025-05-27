@@ -10,7 +10,7 @@
  *	and all operations required to solve the n-Queens problem.
  *	
  *	The file is complete.
-*/
+ */
 
 
 public class AssigThree125

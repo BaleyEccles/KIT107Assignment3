@@ -12,7 +12,7 @@
  *	square).
  *	
  *	This file is complete.
-*/
+ */
 
 
 import java.awt.Color;

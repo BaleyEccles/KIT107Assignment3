@@ -11,7 +11,7 @@
  *	the next node in the linked-list, "next".
  *	
  *	This file is complete.
-*/
+ */
 
 
 public interface NodeInterface

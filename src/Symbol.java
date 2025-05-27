@@ -8,10 +8,10 @@
  *	This file holds the Symbol ADT which represents
  *	pieces within the two-dimensional grid.
  *	A Symbol consists of a representation of a queen plus its
-	location.
+ location.
  *	
  *	YOU NEED TO MAKE CHANGES TO THIS FILE!
-*/
+ */
 
 
 import java.awt.*;
@@ -39,11 +39,11 @@ public class Symbol implements SymbolInterface, Cloneable
      */
 	public Symbol()
 	{
-	      	trace("Symbol: Constructor starts");
-	        setIcon(null);
-	        setLocation(null);
+        trace("Symbol: Constructor starts");
+        setIcon(null);
+        setLocation(null);
 	
-	      	trace("Symbol: Constructor ends");
+        trace("Symbol: Constructor ends");
 	}
 	
 	
@@ -58,15 +58,15 @@ public class Symbol implements SymbolInterface, Cloneable
 	 *				given location
 	 *
 	 *	@param l Location for the position of the symbol
-	*/
+     */
 	public Symbol(Location l)
 	{
-	      	trace("Symbol: Constructor starts");
+        trace("Symbol: Constructor starts");
 	
-	        setIcon(null);
+        setIcon(null);
 		setLocation(l);
 	
-	      	trace("Symbol: Constructor ends");
+        trace("Symbol: Constructor ends");
 	}
 	
 	
@@ -81,15 +81,15 @@ public class Symbol implements SymbolInterface, Cloneable
 	 *
 	 *	@param i the icon (image) to use
 	 *	@param l the location for the position of the symbol
-	*/
+     */
 	protected Symbol(Image i, Location l)
 	{
-     		trace("Symbol: Constructor starts");
+        trace("Symbol: Constructor starts");
 
 		setIcon(i);
 		setLocation(l);
         
-      		trace("Symbol: Constructor ends");
+        trace("Symbol: Constructor ends");
 	}
 	
 	
@@ -99,12 +99,12 @@ public class Symbol implements SymbolInterface, Cloneable
 	 *	Post-condition: return true if the given symbol is undefined
 	 *					and false otherwise
 	 *	Informally: examine the Symbol to see if it is empty or not
-	*/
+     */
 	public boolean isEmpty()
 	{
 		trace("isEmpty: isEmpty starts and ends");
 
-        	return (icon == null);
+        return (icon == null);
 
 	}
 	
@@ -119,12 +119,12 @@ public class Symbol implements SymbolInterface, Cloneable
 	 *				object's icon instance variable
 	 *
 	 *	@param i the icon (image) to use
-	*/
+     */
 	public void setIcon(Image i)
 	{	
 		trace("setIcon: setIcon starts");
 
-        	icon = i;
+        icon = i;
         
 		trace("setIcon: setIcon ends");
 	}
@@ -139,12 +139,12 @@ public class Symbol implements SymbolInterface, Cloneable
 	 *				object's loc instance variable
 	 *
 	 *	@param l the location for the position of the symbol
-	*/
+     */
 	public void setLocation(Location l)
 	{
 		trace("setLocation: setLocation starts");
 
-        	loc = l;
+        loc = l;
 
 		trace("setLocation: setLocation ends");
 
@@ -159,12 +159,12 @@ public class Symbol implements SymbolInterface, Cloneable
 	 *				variable returning its value
 	 *
 	 * @return Image the current symbol's icon
-	*/
+     */
 	public Image getIcon()
 	{
 		trace("getIcon: getIcon starts and ends");
 
-        	return icon;
+        return icon;
 	}
 	
 	
@@ -176,12 +176,12 @@ public class Symbol implements SymbolInterface, Cloneable
 	 *				variable returning its value
 	 *
 	 * @return Location the current symbol's location
-	*/
+     */
 	public Location getLocation()
 	{
 		trace("getLocation: getLocation starts and ends");
 
-        	return loc;
+        return loc;
 	}
 	
 	
@@ -193,16 +193,16 @@ public class Symbol implements SymbolInterface, Cloneable
 	 *	Informally: copy the current Symbol
 	 *
 	 *	@return Object the copy of the Symbol
-	*/
+     */
 	public Object clone()
 	{
 		Symbol s;	// result
 			
-	      	trace("clone: clone starts");
+        trace("clone: clone starts");
 	
-	        s = new Symbol(getIcon(), getLocation());
+        s = new Symbol(getIcon(), getLocation());
 			
-	      	trace("clone: clone ends");
+        trace("clone: clone ends");
 		return s;
 	}
 	
@@ -218,7 +218,7 @@ public class Symbol implements SymbolInterface, Cloneable
 	 *	Informally: display the current symbol
 	 *
 	 *	@param s the Display to show the Symbol upon
-	*/
+     */
 	public void showSymbol(Display s)
 	{
 		int r;		// row component of location
@@ -241,7 +241,7 @@ public class Symbol implements SymbolInterface, Cloneable
 			g.drawImage(icon,(c+1)*32+110,(r+1)*32+50,null);
 		}
 
-      		trace("showSymbol: showSymbol ends");
+        trace("showSymbol: showSymbol ends");
 	}
 	
 	
@@ -255,22 +255,22 @@ public class Symbol implements SymbolInterface, Cloneable
 	 *				symbol 
 	 *
 	 *	@return String the printable representation of the Symbol
-	*/
+     */
 	public String toString()
 	{
-      		trace("toString: toString starts");
+        trace("toString: toString starts");
 
 		if (isEmpty())
 		{
 			// empty symbol
-      			trace("toString: toString ends (empty)");
+            trace("toString: toString ends (empty)");
 			return "   ";
 		}
 		else
 		{
 			// non-empty symbol
-     			trace("toString: toString ends (non-empty)");
-      			return " Q ";
+            trace("toString: toString ends (non-empty)");
+            return " Q ";
 		}
 	}
 
@@ -284,7 +284,7 @@ public class Symbol implements SymbolInterface, Cloneable
 	 *	Informally: show the given message for tracing purposes
 	 *
 	 *	@param s the String to be displayed as the trace message
-	*/
+     */
 	protected void trace(String s)
 	{
 		if (TRACING)

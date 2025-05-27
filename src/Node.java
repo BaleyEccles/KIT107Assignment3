@@ -11,7 +11,7 @@
  *	the next node in the linked-list, "next".
  *	
  *	This file is complete.
-*/
+ */
 
 
 public class Node implements NodeInterface
@@ -36,7 +36,7 @@ public class Node implements NodeInterface
 	 *				and to terminate the "next" field
 	 *
 	 *	@param o Object to store in the node
-	*/
+     */
 	public Node(Object o)
 	{
       	trace("Node: Constructor starts");
@@ -58,7 +58,7 @@ public class Node implements NodeInterface
 	 *				object's "data" instance variable
 	 *
 	 *	@param o Object to store in the node
-	*/
+     */
 	public void setData(Object o)
 	{
       	trace("setData: setData starts");
@@ -79,7 +79,7 @@ public class Node implements NodeInterface
 	 *				object's "next" instance variable
 	 *
 	 *	@param n Node to store in the next field
-	*/
+     */
 	public void setNext(Node n)
 	{
       	trace("setNext: setNext starts");
@@ -99,7 +99,7 @@ public class Node implements NodeInterface
 	 *				variable returning its value
 	 *
 	 *	@return Object the contents of the current Node's data field
-	*/
+     */
 	public Object getData()
 	{
       	trace("getData: getData starts and ends");
@@ -117,7 +117,7 @@ public class Node implements NodeInterface
 	 *				variable returning its value
 	 *
 	 *	@return Node the contents of the current Node's next field
-	*/
+     */
 	public Node getNext()
 	{
       	trace("getNext: getNext starts and ends");
@@ -135,7 +135,7 @@ public class Node implements NodeInterface
 	 *	Informally: show the given message for tracing purposes
 	 *
 	 *	@param s String to print as trace message
-	*/
+     */
 	protected void trace(String s)
 	{
 		if (TRACING)

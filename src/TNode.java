@@ -13,7 +13,7 @@
  *	eldest sibling node	("sibling").
  *	
  *	This file is complete.
-*/
+ */
 
 
 public class TNode implements TNodeInterface
@@ -42,7 +42,7 @@ public class TNode implements TNodeInterface
 	 *
 	 *	@param o the Object to store in the data field of the node
 	 *	@param l the level number of the created node
-	*/
+     */
 	public TNode(Object o, int l)
 	{
       	trace("TNode: Constructor ends");
@@ -66,7 +66,7 @@ public class TNode implements TNodeInterface
 	 *				object's "data" instance variable
 	 *
 	 *	@param o the Object to store in the data field of the node
-	*/
+     */
 	public void setData(Object o)
 	{
       	trace("setData: setData starts");
@@ -87,7 +87,7 @@ public class TNode implements TNodeInterface
 	 *				object's "level" instance variable
 	 *
 	 *	@param l the level number of the node
-	*/
+     */
 	public void setLevel(int l)
 	{
       	trace("setLevel: setLevel starts");
@@ -108,7 +108,7 @@ public class TNode implements TNodeInterface
 	 *				object's "child" instance variable
 	 *
 	 *	@param n the node to set as the child of the current node
-	*/
+     */
 	public void setChild(TNode n)
 	{
       	trace("setChild: setChild starts");
@@ -129,7 +129,7 @@ public class TNode implements TNodeInterface
 	 *				object's "sibling" instance variable
 	 *
 	 *	@param n the node to set as the sibling of the current node
-	*/
+     */
 	public void setSibling(TNode n)
 	{
       	trace("setSibling: setSibling starts");
@@ -149,7 +149,7 @@ public class TNode implements TNodeInterface
 	 *				variable returning its value
 	 *
 	 *	@return Object the item in the node
-	*/
+     */
 	public Object getData()
 	{
       	trace("getData: getData starts and ends");
@@ -168,7 +168,7 @@ public class TNode implements TNodeInterface
 	 *				variable returning its value
 	 *
 	 *	@return int the level number of the current node
-	*/
+     */
 	public int getLevel()
 	{
       	trace("getLevel: getLevel starts and ends");
@@ -187,7 +187,7 @@ public class TNode implements TNodeInterface
 	 *				instance variable returning its value
 	 *
 	 *	@return TNode the child of the current node
-	*/
+     */
 	public TNode getChild()
 	{
       	trace("getChild: getChild starts and ends");
@@ -206,7 +206,7 @@ public class TNode implements TNodeInterface
 	 *				instance variable returning its value
 	 *
 	 *	@return TNode the sibling of the current node
-	*/
+     */
 	public TNode getSibling()
 	{
       	trace("getSibling: getSibling starts and ends");
@@ -224,7 +224,7 @@ public class TNode implements TNodeInterface
 	 *	Informally: show the given message for tracing purposes
 	 *
 	 *	@param s the String to be displayed as the trace message
-	*/
+     */
 	protected void trace(String s)
 	{
 		if (TRACING)

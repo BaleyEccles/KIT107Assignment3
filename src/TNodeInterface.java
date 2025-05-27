@@ -13,7 +13,7 @@
  *	eldest sibling node ("sibling").
  *	
  *	This file is complete.
-*/
+ */
 
 
 public interface TNodeInterface

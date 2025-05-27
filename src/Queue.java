@@ -11,7 +11,7 @@
  *	object.
  *	
  *	YOU NEED TO MAKE CHANGES TO THIS FILE!
-*/
+ */
 
 
 public class Queue implements QueueInterface
@@ -31,7 +31,7 @@ public class Queue implements QueueInterface
 	 *	Informally: intialises the instance variable of the newly
 	 *				created Queue object by terminating the
 	 *				"first"	field
-	*/
+     */
 	public Queue()
 	{
 	   	trace("Queue: Constructor starts");
@@ -55,7 +55,7 @@ public class Queue implements QueueInterface
 	 *				given parameter
 	 *
 	 *	@param o the Object to store in the queue
-	*/
+     */
 	public Queue(Object o)
 	{
 	   	trace("Queue: Constructor starts");
@@ -75,12 +75,12 @@ public class Queue implements QueueInterface
 	 *				returning whether or not it is null
 	 *
 	 *	@return boolean whether or not the queue is empty
-	*/
+     */
 	public boolean isEmpty()
 	{
 	   	trace("isEmpty: isEmpty starts and ends");
         
-	        return (first == null);
+        return (first == null);
 	}
 
 
@@ -95,7 +95,7 @@ public class Queue implements QueueInterface
 	 *				throw an exception if the Queue is empty
 	 *
 	 *	@return Object the item at the head of the queue
-	*/
+     */
 	public Object front() throws EmptyQueueException
 	{
 	   	trace("front: front starts");
@@ -110,7 +110,7 @@ public class Queue implements QueueInterface
 		{
 			// first value exists
 		   	trace("front: front ends");
-            		return first.getData();
+            return first.getData();
 		}
 	}
 
@@ -126,7 +126,7 @@ public class Queue implements QueueInterface
 	 *	Informally: bypass the node at the front of the Queue so that
 	 *				the second node in the Queue becomes the front.
 	 *				If the Queue is empty, throw an exception
-	*/
+     */
 	public void remove() throws EmptyQueueException
 	{
 	   	trace("remove: remove starts");
@@ -141,8 +141,8 @@ public class Queue implements QueueInterface
 		{
 			// first value exists
 		   	trace("remove: updating first node");
-	            first = first.getNext();
-	            size--;
+            first = first.getNext();
+            size--;
 		}
 		
 	   	trace("remove: remove ends");
@@ -164,7 +164,7 @@ public class Queue implements QueueInterface
 	 *				queue
 	 *
 	 *	@param Object the item to add to the queue
-	*/
+     */
 	public void add(Object o)
 	{
 		Node c;	// node for traversing the linked list
@@ -172,29 +172,29 @@ public class Queue implements QueueInterface
 		
 	   	trace("add: add starts");
         
-	        n = new Node(o);
-	        c = first;
-	        if (isEmpty())
-	        {
-	            first = n;
-	        }
-	        else
-	        {
-	            boolean cont = true;
-	            while (cont)
-	            {
+        n = new Node(o);
+        c = first;
+        if (isEmpty())
+        {
+            first = n;
+        }
+        else
+        {
+            boolean cont = true;
+            while (cont)
+            {
 	
-	                if (c.getNext() == null)
-	                {
-	                	c.setNext(n);
-                    		cont = false;
-                	}
-                	c = c.getNext();
+                if (c.getNext() == null)
+                {
+                    c.setNext(n);
+                    cont = false;
+                }
+                c = c.getNext();
 
-            		}
+            }
             
-        	}
-       		size++;
+        }
+        size++;
             
 	   	trace("add: add ends");
 	}
@@ -211,7 +211,7 @@ public class Queue implements QueueInterface
 	 *	Informally: produce a String representation of the Queue
 	 *
 	 *	@return String the printable contents of the queue
-	*/
+     */
 	public String toString()
 	{
 		Node c;		// node for traversing the linked list
@@ -251,7 +251,7 @@ public class Queue implements QueueInterface
 	 *	Informally: show the given message for tracing purposes
 	 *
 	 *	@param s the String to display as the trace message
-	*/
+     */
 	protected void trace(String s)
 	{
 		if (TRACING)

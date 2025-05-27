@@ -12,7 +12,7 @@
  *	set/get instance variables in an empty GameTree.
  *	
  *	This file is complete.
-*/
+ */
 
 
 public class EmptyGameTreeException extends RuntimeException {

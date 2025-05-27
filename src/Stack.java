@@ -11,7 +11,7 @@
  *	object.
  *	
  *	YOU NEED TO MAKE CHANGES TO THIS FILE!
-*/
+ */
 
 
 public class Stack implements StackInterface
@@ -31,7 +31,7 @@ public class Stack implements StackInterface
 	 *	Informally: intialises the instance variable of the newly
 	 *				created Stack object by terminating the "tos"
 	 *				field
-	*/
+     */
 	public Stack()
 	{
 		trace("Stack: Constructor ends");
@@ -54,14 +54,14 @@ public class Stack implements StackInterface
 	 *				a new Node object containing the given parameter
 	 *
 	 *	@param o the Object to store within the Stack
-	*/
+     */
 	public Stack(Object o)
 	{
-	      	trace("Stack: Constructor ends");
+        trace("Stack: Constructor ends");
 
 		tos = new Node(o);
 
-	      	trace("Stack: Constructor ends");
+        trace("Stack: Constructor ends");
 	}
 	
 	
@@ -75,11 +75,11 @@ public class Stack implements StackInterface
 	 *					returning whether or not it is null
 	 *
 	 *	@return boolean whether or not the Stack is empty
-	*/
+     */
 	public boolean isEmpty()
 	{
-	      	trace("isEmpty: isEmpty starts and ends");
-	        return (tos == null);
+        trace("isEmpty: isEmpty starts and ends");
+        return (tos == null);
 	}
 
 
@@ -94,10 +94,10 @@ public class Stack implements StackInterface
 	 *				throw an exception if the Stack is empty
 	 *
 	 *	@return Object the item at the top of the Stack
-	*/
+     */
 	public Object top() throws EmptyStackException
 	{
-	      	trace("top: top starts");
+        trace("top: top starts");
 
 		if (isEmpty())
 		{
@@ -108,8 +108,8 @@ public class Stack implements StackInterface
 		else
 		{
 			// top value exists
-		      	trace("top: top ends");
-		        return tos.getData();
+            trace("top: top ends");
+            return tos.getData();
 		}
 	}
 
@@ -125,15 +125,15 @@ public class Stack implements StackInterface
 	 *	Informally: bypass the node on the top of the Stack so that
 	 *				the second node on the Stack becomes the top.  If
 	 *				the Stack is empty, throw an exception
-	*/
+     */
 	public void pop() throws EmptyStackException
 	{
-	      	trace("pop: pop starts");
+        trace("pop: pop starts");
 
 		if (isEmpty())
 		{
 			// no top value exists!
-	 	     	trace("pop: empty stack");
+            trace("pop: empty stack");
 			throw new EmptyStackException();
 		}
 		else
@@ -141,10 +141,10 @@ public class Stack implements StackInterface
 			// top value exists
 			trace("pop: adjusting top of stack");
 			tos = tos.getNext();
-		        size--;
+            size--;
 		}
 		
-	      	trace("pop: pop ends");
+        trace("pop: pop ends");
 	}
 
 
@@ -161,20 +161,20 @@ public class Stack implements StackInterface
 	 *				on the stack making it the new top of stack
 	 *
 	 *	@param o the Object to add to the top of the Stack
-	*/
+     */
 	public void push(Object o)
 	{
 		Node n;	// new node for value to be added
 		
-	      	trace("push: push starts");
+        trace("push: push starts");
 	        
-	        n = new Node(o);
+        n = new Node(o);
 	        
-	        n.setNext(tos);
-	        tos = n;
-	        size++;
+        n.setNext(tos);
+        tos = n;
+        size++;
 	
-	      	trace("push: push ends");
+        trace("push: push ends");
 	}
 	
 	
@@ -190,18 +190,18 @@ public class Stack implements StackInterface
 	 *
 	 *	@return String the printable representation of the contents of
 	 *				the Stack
-	*/
+     */
 	public String toString()
 	{
 		Node c;		// node for traversing the linked list
 		String s;	// result
 		
-	      	trace("toString: toString starts");
+        trace("toString: toString starts");
 
 		if (isEmpty())
 		{
 			// nothing in stack
-	  	    	trace("toString: toString ends empty");
+            trace("toString: toString ends empty");
 			s = "<>";
 		}
 		else
@@ -214,7 +214,7 @@ public class Stack implements StackInterface
 				s += (c.getData().toString() + " ");
 				c = c.getNext();
 			}
-		      	trace("toString: toString ends non-empty");
+            trace("toString: toString ends non-empty");
 		}
 		
 		return s;
@@ -230,7 +230,7 @@ public class Stack implements StackInterface
 	 *	Informally: show the given message for tracing purposes
 	 *
 	 *	@param s the String to be displayed as the trace message
-	*/
+     */
 	protected void trace(String s)
 	{
 		if (TRACING)

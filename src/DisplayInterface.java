@@ -10,7 +10,7 @@
  *	represented by a graphics context (Graphics).
  *	
  *	This file is complete.
-*/
+ */
 
 
 import java.awt.*;

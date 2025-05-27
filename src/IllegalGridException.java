@@ -15,7 +15,7 @@
  *	the third constructor, setSquare()/getSquare().
  *	
  *	This file is complete.
-*/
+ */
 
 
 public class IllegalGridException extends RuntimeException {

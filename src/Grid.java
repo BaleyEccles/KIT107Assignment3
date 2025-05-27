@@ -12,7 +12,7 @@
  *	array (table/matrix) of the squares in the board.
  *	
  *	YOU NEED TO MAKE CHANGES TO THIS FILE!
-*/
+ */
 
 import java.awt.*;
 
@@ -34,19 +34,19 @@ public class Grid implements GridInterface, Cloneable
 	 *	Post-condition: an 8x8 grid is created in which all
 	 *					squares are empty
 	 *	Informally: create an empty 8x8 grid
-	*/
+     */
 	public Grid()
 	{
 		final int DEFAULT_SIZE = 8;	// the default grid size
 
-      		trace("Grid: Constructor starts");
+        trace("Grid: Constructor starts");
 
 		// initialise dimension
 		dimension = DEFAULT_SIZE;
 		// initialise board		
 		initialiseGrid();
         
-      		trace("Grid: Constructor ends");
+        trace("Grid: Constructor ends");
 	}
 	
 	
@@ -59,15 +59,15 @@ public class Grid implements GridInterface, Cloneable
 	 *	Informally: create an unoccupied grid of given dimension
 	 *
 	 *	@param d number of rows and columns in grid
-	*/
+     */
 	public Grid(int d)
 	{
-      		trace("Grid: Constructor starts");
+        trace("Grid: Constructor starts");
       	
-        	setDimension(d);
-        	initialiseGrid();
+        setDimension(d);
+        initialiseGrid();
 		
-      		trace("Grid: Constructor ends");		
+        trace("Grid: Constructor ends");		
 	}
 	
 	
@@ -91,14 +91,14 @@ public class Grid implements GridInterface, Cloneable
 	 *	@param d number of rows and columns in grid
 	 *	@param l Location for first move
 	 *	@param s Symbol for first move
-	*/
+     */
 	public Grid(int d, Location l, Symbol s) throws IllegalGridException
 	{
-      		trace("Grid: Constructor starts");
+        trace("Grid: Constructor starts");
 
 		// create an empty grid of required size
 		setDimension(d);
-        	initialiseGrid();
+        initialiseGrid();
 
 		// add the queen to the empty grid (unless it is illegal)
 		if (validMove(l))
@@ -112,7 +112,7 @@ public class Grid implements GridInterface, Cloneable
 			throw new IllegalGridException();
 		}
 
-      		trace("Grid: Constructor ends");
+        trace("Grid: Constructor ends");
 	}
 	
 	
@@ -125,14 +125,14 @@ public class Grid implements GridInterface, Cloneable
 	 *					created empty squares each with the
 	 *					correct location
 	 *	Informally: create an empty grid of known dimension
-	*/
+     */
 	protected void initialiseGrid()
 	{
 		final int MINIMUM = 1;	// minimum row and column number
 
 		Location l;				// a location value to iterate through the squares
 		
-      		trace("initialiseGrid: initialiseGrid starts");
+        trace("initialiseGrid: initialiseGrid starts");
       	
 		// instantiate the table (array of arrays)
 		board = new Square[dimension][dimension];
@@ -147,7 +147,7 @@ public class Grid implements GridInterface, Cloneable
 			}
 		}
 		
-      		trace("initialiseGrid: initialiseGrid ends");		
+        trace("initialiseGrid: initialiseGrid ends");		
 	}
 	
 	
@@ -160,7 +160,7 @@ public class Grid implements GridInterface, Cloneable
 	 *	Informally: copy the current Grid
 	 *
 	 *	@return Object the newly created copy of the grid
-	*/
+     */
 	public Object clone()
 	{
 		final int MINIMUM = 1;	// minimum row and column number
@@ -169,11 +169,11 @@ public class Grid implements GridInterface, Cloneable
 		Location l;				// a location value to iterate through the squares
 		Symbol s;				// the symbol of the 'current' square
 		
-      		trace("clone: clone starts");
+        trace("clone: clone starts");
 
-        	b = new Grid(getDimension());
+        b = new Grid(getDimension());
         
-        	for (int r = MINIMUM; r <= dimension; r++)
+        for (int r = MINIMUM; r <= dimension; r++)
 		{
 			for (int c = MINIMUM; c <= dimension; c++)
 			{
@@ -185,7 +185,7 @@ public class Grid implements GridInterface, Cloneable
             }
         }
 				
-      		trace("clone: clone ends");
+        trace("clone: clone ends");
 		return b;
 	}
 	
@@ -204,13 +204,13 @@ public class Grid implements GridInterface, Cloneable
 	 *
 	 *	@param l Location for the square
 	 *	@param s Square to be stored within grid
-	*/	
+     */	
 	public void setSquare(Location l, Square s) throws IllegalGridException
 	{
 		int r;	// row component of location
 		int c;	// column component of location
 		
-      		trace("setSquare: setSquare starts");
+        trace("setSquare: setSquare starts");
       	
 		// is it on the board?
 		if (! validMove(l))
@@ -230,7 +230,7 @@ public class Grid implements GridInterface, Cloneable
 			board[r-1][c-1] = s;
 		}
 
-      		trace("setSquare: setSquare ends");
+        trace("setSquare: setSquare ends");
 	}
 
 
@@ -251,13 +251,13 @@ public class Grid implements GridInterface, Cloneable
 	 *	@param l Location of desired square
 	 *
 	 *	@return Square the desired Square
-	*/
+     */
 	public Square getSquare(Location l) throws IllegalGridException
 	{
 		int r;	// row component of location
 		int c;	// column component of location
 
-      		trace("getSquare: getSquare starts");
+        trace("getSquare: getSquare starts");
 
 		// is it on the board?
 		if (! validMove(l))
@@ -287,14 +287,14 @@ public class Grid implements GridInterface, Cloneable
 	 *	Informally: assign the given dimension to the Grid object
 	 *
 	 *	@param d the number of rows and columns in the grid
-	*/
+     */
 	public void setDimension(int d)
 	{
-      		trace("setDimension: setDimension starts");
+        trace("setDimension: setDimension starts");
       	
-        	dimension = d;
+        dimension = d;
 		
-      		trace("setDimension: setDimension ends");
+        trace("setDimension: setDimension ends");
 	}
 
 
@@ -307,11 +307,11 @@ public class Grid implements GridInterface, Cloneable
 	 *	Informally: return the current grid's dimension
 	 *
 	 *	@return int the number of rows and columns in the grid
-	*/
+     */
 	public int getDimension()
 	{
-      		trace("getDimension: getDimension starts and ends");
-        	return dimension;
+        trace("getDimension: getDimension starts and ends");
+        return dimension;
 	}
 
 
@@ -330,13 +330,13 @@ public class Grid implements GridInterface, Cloneable
 	 *
 	 *	@param l Location to place symbol at
 	 *	@param s Symbol to place
-	*/
+     */
 	public void occupySquare(Location l, Symbol s)
 	{
 		Square q;	// square at given Location in current Grid
 		Symbol m;	// clone of given Symbol
  
-      		trace("occupySquare: occupySquare starts");
+        trace("occupySquare: occupySquare starts");
 
 		// is it on the board?
 		if (! validMove(l))
@@ -347,13 +347,13 @@ public class Grid implements GridInterface, Cloneable
 		}
 		else
 		{
-            		m = (Symbol)s.clone();
-            		m.setLocation(l);
-            		q = board[l.getRow() - 1][l.getColumn() - 1];
-            		q.setSymbol(m);
+            m = (Symbol)s.clone();
+            m.setLocation(l);
+            q = board[l.getRow() - 1][l.getColumn() - 1];
+            q.setSymbol(m);
             
 		}
-      		trace("occupySquare: occupySquare ends");
+        trace("occupySquare: occupySquare ends");
 	}
 
 
@@ -373,19 +373,19 @@ public class Grid implements GridInterface, Cloneable
 	 *				the given location is occupied
 	 *
 	 *	@param l Location of square to check
-	*/
+     */
 	public boolean squareOccupied(Location l)
 	{
-      		trace("squareOccupied: squareOccupied starts and ends");
+        trace("squareOccupied: squareOccupied starts and ends");
 
-        	if (! validMove(l))
+        if (! validMove(l))
 		{
 			// no, it's not
 			trace("occupySquare: location not on the grid");
 			throw new IllegalGridException();
 		}
         
-        	return !(board[l.getRow() - 1][l.getColumn() - 1].isEmpty());
+        return !(board[l.getRow() - 1][l.getColumn() - 1].isEmpty());
 
 	}
 	
@@ -403,7 +403,7 @@ public class Grid implements GridInterface, Cloneable
 	 *
 	 *	@param l Location to consider
 	 *	@return boolean whether or not Location is on the grid
-	*/
+     */
 	public boolean validMove(Location l)
 	{
 		final int MINIMUM = 1;	// minimum row and column number
@@ -412,22 +412,22 @@ public class Grid implements GridInterface, Cloneable
 		int r;	// row component of location
 		int c;	// column component of location
 
-      		trace("validMove: validMove starts");
+        trace("validMove: validMove starts");
       	
-        	r = l.getRow();
-        	c = l.getColumn();
+        r = l.getRow();
+        c = l.getColumn();
         
-        	b = true;
-        	if (r < MINIMUM || c < MINIMUM)
-        	{
-            		b = false;
-        	}
-       	 	if (r > getDimension() || c > getDimension())
-        	{
-           		b = false;
-        	}
+        b = true;
+        if (r < MINIMUM || c < MINIMUM)
+        {
+            b = false;
+        }
+        if (r > getDimension() || c > getDimension())
+        {
+            b = false;
+        }
 
-      		trace("validMove: validMove ends");
+        trace("validMove: validMove ends");
 		return b;
 	}
 
@@ -445,7 +445,7 @@ public class Grid implements GridInterface, Cloneable
 	 *
 	 *	@return boolean whether or not all rows have a
 	 *				non-empty symbol within them
-	*/
+     */
 	public boolean solved()
 	{
 		final int MINIMUM = 1;	// minimum row and column number
@@ -453,7 +453,7 @@ public class Grid implements GridInterface, Cloneable
   		Location l;	// location to check
 		boolean f;	// result
   
-      		trace("solved: solved starts");
+        trace("solved: solved starts");
 
 		// check every square on the grid
 		for (int r = MINIMUM; r <= dimension; r++)
@@ -478,24 +478,24 @@ public class Grid implements GridInterface, Cloneable
 			}
 		}
 		
-      		trace("solved: solved ends with a symbol on all rows");		
+        trace("solved: solved ends with a symbol on all rows");		
   		return true;
 	}
 
 	
 	/**
-	* 	rowClear
-	*	Check whether the indicated row on the given board is clear of
-	*		symbols
-	*	Pre-condition: the given Location is within the current Grid
-	*	Post-condition: true is returned if row r contains no queens, and
-	*					false is returned otherwise
-	*	Informally: Return whether or not a row is clear of queens
-	*
-	*	@param l Location containing row value to check
-	*
-	*	@return boolean whether the row is clear
-	*/
+     * 	rowClear
+     *	Check whether the indicated row on the given board is clear of
+     *		symbols
+     *	Pre-condition: the given Location is within the current Grid
+     *	Post-condition: true is returned if row r contains no queens, and
+     *					false is returned otherwise
+     *	Informally: Return whether or not a row is clear of queens
+     *
+     *	@param l Location containing row value to check
+     *
+     *	@return boolean whether the row is clear
+     */
 	protected boolean rowClear(Location l)
 	{
 		final int MINIMUM = 1;	// minimum row and column number
@@ -524,18 +524,18 @@ public class Grid implements GridInterface, Cloneable
 
 
 	/**
-	* 	columnClear
-	*	Check whether the indicated column on the given board is clear of
-	*		symbols
-	*	Pre-condition: the given Location is within the current Grid
-	*	Post-condition: true is returned if column c contains no queens,
-	*					and false is returned otherwise
-	*	Informally: Return whether or not a column is clear of queens
-	*
-	*	@param l Location containing column value to check
-	*
-	*	@return boolean whether the column is clear
-	*/
+     * 	columnClear
+     *	Check whether the indicated column on the given board is clear of
+     *		symbols
+     *	Pre-condition: the given Location is within the current Grid
+     *	Post-condition: true is returned if column c contains no queens,
+     *					and false is returned otherwise
+     *	Informally: Return whether or not a column is clear of queens
+     *
+     *	@param l Location containing column value to check
+     *
+     *	@return boolean whether the column is clear
+     */
 	protected boolean columnClear(Location l)
 	{
 		final int MINIMUM = 1;	// minimum row and column number
@@ -564,20 +564,20 @@ public class Grid implements GridInterface, Cloneable
 
 
 	/**
-	* 	diagonalsClear
-	*	Check whether the diagonals from the given coordinate on the
-	*		given board are clear of symbols
-	*	Pre-condition: the given Location is within the current Grid
-	*	Post-condition: true is returned if the diagonals of the
-	*					given coordinate contain no queens, and
-	*					false is returned otherwise
-	*	Informally: Return whether or not the diagonals of a given
-	*				coordinate are clear of queens
-	*
-	*	@param l Location to check the diagonals of
-	*
-	*	@return boolean whether the diagonals are clear
-	*/
+     * 	diagonalsClear
+     *	Check whether the diagonals from the given coordinate on the
+     *		given board are clear of symbols
+     *	Pre-condition: the given Location is within the current Grid
+     *	Post-condition: true is returned if the diagonals of the
+     *					given coordinate contain no queens, and
+     *					false is returned otherwise
+     *	Informally: Return whether or not the diagonals of a given
+     *				coordinate are clear of queens
+     *
+     *	@param l Location to check the diagonals of
+     *
+     *	@return boolean whether the diagonals are clear
+     */
 	protected boolean diagonalsClear(Location l)
 	{
 		final int MINIMUM = 1;	// minimum row and column number
@@ -639,22 +639,22 @@ public class Grid implements GridInterface, Cloneable
 
 
 	/**
-	* 	clash
-	*	Check whether the row, column, and/or diagonals from the given
-	*		coordinate on the given board are clear of queens
-	*	Pre-condition: the given Location is within the current Grid
-	*	Post-condition: true is returned if the row, column, and/or 
-	*					diagonals of the given Location contain
-	*					queens, and falsee is returned otherwise
-	*	Informally: Return whether or not the row, column, and
-	*				diagonals of a given Location are not clear of
-	*				queens
-	*
-	*	@param l Location to check the row, column, and diagonals of
-	*
-	*	@return boolean whether there is already a queen on the row,
-	*				column,	and/or diagonals
-	*/
+     * 	clash
+     *	Check whether the row, column, and/or diagonals from the given
+     *		coordinate on the given board are clear of queens
+     *	Pre-condition: the given Location is within the current Grid
+     *	Post-condition: true is returned if the row, column, and/or 
+     *					diagonals of the given Location contain
+     *					queens, and falsee is returned otherwise
+     *	Informally: Return whether or not the row, column, and
+     *				diagonals of a given Location are not clear of
+     *				queens
+     *
+     *	@param l Location to check the row, column, and diagonals of
+     *
+     *	@return boolean whether there is already a queen on the row,
+     *				column,	and/or diagonals
+     */
 	public boolean clash(Location l)
 	{
 		trace("clash: clash starts and finishes");
@@ -672,7 +672,7 @@ public class Grid implements GridInterface, Cloneable
 	 *	Informally: find a String representation of the grid
 	 *
 	 *	@return String representation of the grid
-	*/
+     */
 	public String toString()
 	{
 		final int MINIMUM = 1;	// minimum row and column number
@@ -713,7 +713,7 @@ public class Grid implements GridInterface, Cloneable
 			s += "\n";
 		}
 		
-      		trace("toString: toString ends");
+        trace("toString: toString ends");
 		return s;
 	}
 
@@ -727,7 +727,7 @@ public class Grid implements GridInterface, Cloneable
 	 *	Informally: display the current grid
 	 *
 	 *	@param s the Display upon which the grid should be shown
-	*/
+     */
 	public void showGrid(Display s)
 	{
 		final int WIDTH=32;		// the width and height of each square on the Display
@@ -737,7 +737,7 @@ public class Grid implements GridInterface, Cloneable
 		Graphics g;	// the graphics context of the given Display
 		Square q;	// the Square iterated through
 		
-      		trace("showGrid: showGrid starts");
+        trace("showGrid: showGrid starts");
 
 		// get the graphcs context for painting
 		g = s.getGraphics();
@@ -764,7 +764,7 @@ public class Grid implements GridInterface, Cloneable
 
 		trace("showGrid: grid is " + toString());
 
-      		trace("showGrid: showGrid ends");
+        trace("showGrid: showGrid ends");
  	}
  	
 
@@ -777,7 +777,7 @@ public class Grid implements GridInterface, Cloneable
 	 *	Informally: show the given message for tracing purposes
 	 *
 	 *	@param s String to display as trace message
-	*/
+     */
 	protected void trace(String s)
 	{
 		if (TRACING)
