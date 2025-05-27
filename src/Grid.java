@@ -98,7 +98,7 @@ public class Grid implements GridInterface, Cloneable
 
 		// create an empty grid of required size
 		setDimension(d);
-		initialiseGrid();
+        initialiseGrid();
 
 		// add the queen to the empty grid (unless it is illegal)
 		if (validMove(l))
@@ -349,7 +349,7 @@ public class Grid implements GridInterface, Cloneable
 		{
             m = (Symbol)s.clone();
             q = board[l.getRow() - 1][l.getColumn() - 1];
-            q.setSymbol(s);
+            q.setSymbol(m);
             
 		}
       	trace("occupySquare: occupySquare ends");
@@ -383,7 +383,7 @@ public class Grid implements GridInterface, Cloneable
 			trace("occupySquare: location not on the grid");
 			throw new IllegalGridException();
 		}
-
+        
         return !(board[l.getRow() - 1][l.getColumn() - 1].isEmpty());
 
 	}

@@ -353,29 +353,29 @@ public class GameTree implements GameTreeInterface
 		{
 			for (int c = MINIMUM; c <= d; c++)
 			{
-                System.out.println("Checking " + r + ", " + c);
+                //System.out.println("Checking " + r + ", " + c);
 				l = new Location(r, c);
                 if (b1.clash(l)) {
-                    System.out.println("Clash at " + r + ", " + c);
+                    //System.out.println("Clash at " + r + ", " + c);
                 }
                 if (b1.squareOccupied(l)) {
-                    System.out.println("occupied at " + r + ", " + c);
+                    //System.out.println("occupied at " + r + ", " + c);
                 }
                 if (!b1.clash(l) && !b1.squareOccupied(l))
                 {
                     b2 = (Grid)b1.clone();
                     b2.occupySquare(l, m);
 
-                    System.out.println("grid b2: " + b2.toString());
+                    //System.out.println("grid b2: " + b2.toString());
                     t = new GameTree(b2, v);
                         
                     s.push(t);
                     
                     this.setChild(t);
-                    System.out.println("Stack after pushing " + s.size);
+                    //System.out.println("Stack after pushing " + s.size);
                     
                 }
-                System.out.println("Stack Size " + s.size);
+                //System.out.println("Stack Size " + s.size);
             }
         }
 
@@ -446,15 +446,15 @@ public class GameTree implements GameTreeInterface
             if (t.getLevel() == d)
             {
                 Grid finalGrid = (Grid)t.getData();
-                System.out.println("grid done: " + finalGrid.toString());
+                //System.out.println("grid done: " + finalGrid.toString());
                 return t;
             }
             t = t.buildGameDF(s, m, d);
-            System.out.println("Stack Size6 " + s.size);
+            //System.out.println("Stack Size6 " + s.size);
         }
 
         
-        System.out.println("Stack Size3 " + s.size);
+        //System.out.println("Stack Size3 " + s.size);
 		trace("buildGameDF: buildGameDF ends 3");
 
 
