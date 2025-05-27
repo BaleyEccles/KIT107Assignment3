@@ -36,10 +36,12 @@ public class Symbol implements SymbolInterface, Cloneable
 	 *					icon
 	 *	Informally: intialises the instance variable of the newly
 	 *				created Symbol object to empty
-	*/
+     */
 	public Symbol()
 	{
       	trace("Symbol: Constructor starts");
+        setIcon(null);
+        setLocation(null);
 
       	trace("Symbol: Constructor ends");
 	}
@@ -60,7 +62,8 @@ public class Symbol implements SymbolInterface, Cloneable
 	public Symbol(Location l)
 	{
       	trace("Symbol: Constructor starts");
-        
+
+        setIcon(null);
 		setLocation(l);
 
       	trace("Symbol: Constructor ends");
@@ -101,7 +104,7 @@ public class Symbol implements SymbolInterface, Cloneable
 	{
 		trace("isEmpty: isEmpty starts and ends");
 
-        if (icon == null || loc == null)
+        if (icon == null)
         {
             return true;
         }
@@ -125,7 +128,7 @@ public class Symbol implements SymbolInterface, Cloneable
 		trace("setIcon: setIcon starts");
 
         icon = i;
-
+        
 		trace("setIcon: setIcon ends");
 	}
 	
@@ -201,7 +204,6 @@ public class Symbol implements SymbolInterface, Cloneable
       	trace("clone: clone starts");
 
         s = new Symbol(getIcon(), getLocation());
-
 		
       	trace("clone: clone ends");
 		return s;

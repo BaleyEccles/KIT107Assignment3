@@ -44,9 +44,9 @@ public class Square implements SquareInterface, Cloneable
 	{		
       	trace("Square: Constructor starts");
 
-        initialiseSquare(l, null);
         Symbol s = new Symbol(l);
-        setSymbol(s);
+        initialiseSquare(l, s);
+
         
       	trace("Square: Constructor ends");
 	}

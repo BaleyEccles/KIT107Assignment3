@@ -33,7 +33,7 @@ public class NQueens extends Frame implements NQueensInterface, ActionListener
 {
 	// finals
 	protected final boolean TRACING = false;										// do we want to see trace output?
-	protected final int LIMIT = 10;													// *** maximum number of levels to create -- CHANGE THIS TO Integer.MAX_VALUE ONCE GAME IS WORKING
+	protected final int LIMIT = 3;													// *** maximum number of levels to create -- CHANGE THIS TO Integer.MAX_VALUE ONCE GAME IS WORKING
 	protected final Image ICON = Toolkit.getDefaultToolkit().getImage("crown.png");	// picture of Queen
 	
 	protected final int LOW_DIMENSION=4;	// minimum for grid size range
@@ -175,7 +175,6 @@ public class NQueens extends Frame implements NQueensInterface, ActionListener
 		trace("paint: paint starts");
 		
 		window.setGraphics(getGraphics());
-
 		if (started)
 		{	// either solving or solved
 			trace("paint: solving/solved so show (partial) solution");

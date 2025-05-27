@@ -79,11 +79,7 @@ public class Stack implements StackInterface
 	public boolean isEmpty()
 	{
       	trace("isEmpty: isEmpty starts and ends");
-        if (tos == null)
-        {
-            return true;
-        }
-        return false;
+        return (tos == null);
 	}
 
 
@@ -173,6 +169,8 @@ public class Stack implements StackInterface
       	trace("push: push starts");
         
         n = new Node(o);
+        
+        n.setNext(tos);
         tos = n;
         size++;
 

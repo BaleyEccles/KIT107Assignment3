@@ -344,6 +344,7 @@ public class GameTree implements GameTreeInterface
 		
         //COMPLETE ME: Done I think
         b1 = (Grid)getData();
+        
         d = b1.getDimension();
         
         v = getLevel() + 1;
@@ -360,18 +361,24 @@ public class GameTree implements GameTreeInterface
                 if (b1.squareOccupied(l)) {
                     System.out.println("occupied at " + r + ", " + c);
                 }
-                if (!b1.clash(l))
+                if (!b1.clash(l) && !b1.squareOccupied(l))
                 {
                     b2 = (Grid)b1.clone();
                     b2.occupySquare(l, m);
+
+                    System.out.println("grid b2: " + b2.toString());
                     t = new GameTree(b2, v);
+                        
                     s.push(t);
+                    
+                    this.setChild(t);
                     System.out.println("Stack after pushing " + s.size);
-                    setChild(t);
+                    
                 }
                 System.out.println("Stack Size " + s.size);
             }
         }
+
         
 		
 		trace("generateLevelDF: generateLevelDF ends");
@@ -411,10 +418,13 @@ public class GameTree implements GameTreeInterface
 		
         //COMPLETE ME TODO
 
+        generateLevelDF(s, m);
+
+        
         t = new GameTree();
         if (isEmpty())
         {
-            t = new GameTree();
+            t = this;
             trace("buildGameDF: buildGameDF ends 1");
             return t;
         }
@@ -427,10 +437,18 @@ public class GameTree implements GameTreeInterface
 
         
         trace("buildGameDF: buildGameDF generateLevelDF");
+        
         generateLevelDF(s, m);
+        
         while (!s.isEmpty()) {
             t = (GameTree)(s.top());
             s.pop();
+            if (t.getLevel() == d)
+            {
+                Grid finalGrid = (Grid)t.getData();
+                System.out.println("grid done: " + finalGrid.toString());
+                return t;
+            }
             t = t.buildGameDF(s, m, d);
             System.out.println("Stack Size6 " + s.size);
         }
@@ -439,7 +457,7 @@ public class GameTree implements GameTreeInterface
         System.out.println("Stack Size3 " + s.size);
 		trace("buildGameDF: buildGameDF ends 3");
 
-        
+
         return t;
 	}
 	

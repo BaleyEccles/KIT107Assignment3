@@ -25,7 +25,7 @@ public class Grid implements GridInterface, Cloneable
 	// properties
 	protected int dimension;					// size of the grid, i.e. number of rows and colums
 	protected Square board[][];					// all the Squares within the grid
-
+    
 	
 	/**
 	 *	Grid
@@ -45,7 +45,7 @@ public class Grid implements GridInterface, Cloneable
 		dimension = DEFAULT_SIZE;
 		// initialise board		
 		initialiseGrid();
-
+        
       	trace("Grid: Constructor ends");
 	}
 	
@@ -64,7 +64,7 @@ public class Grid implements GridInterface, Cloneable
 	{
       	trace("Grid: Constructor starts");
       	
-        dimension = d;
+        setDimension(d);
         initialiseGrid();
 		
       	trace("Grid: Constructor ends");		
@@ -97,7 +97,7 @@ public class Grid implements GridInterface, Cloneable
       	trace("Grid: Constructor starts");
 
 		// create an empty grid of required size
-		dimension = d;
+		setDimension(d);
 		initialiseGrid();
 
 		// add the queen to the empty grid (unless it is illegal)
@@ -179,11 +179,11 @@ public class Grid implements GridInterface, Cloneable
 			{
 				l = new Location(r, c);
                 s = board[r-1][c-1].getSymbol();
-				b.board[r-1][c-1] = new Square(l, s);
+				//b.board[r-1][c-1] = new Square(l, s);
+                b.occupySquare(l, s);
+                //System.out.println("added " + r + ", " + c);
             }
         }
-
-
 				
       	trace("clone: clone ends");
 		return b;
@@ -348,8 +348,9 @@ public class Grid implements GridInterface, Cloneable
 		else
 		{
             m = (Symbol)s.clone();
-            q = new Square(l, m);
-            board[l.getRow() - 1][l.getColumn() - 1] = q;
+            q = board[l.getRow() - 1][l.getColumn() - 1];
+            q.setSymbol(s);
+            
 		}
       	trace("occupySquare: occupySquare ends");
 	}
@@ -375,7 +376,14 @@ public class Grid implements GridInterface, Cloneable
 	public boolean squareOccupied(Location l)
 	{
       	trace("squareOccupied: squareOccupied starts and ends");
-        
+
+        if (! validMove(l))
+		{
+			// no, it's not
+			trace("occupySquare: location not on the grid");
+			throw new IllegalGridException();
+		}
+
         return !(board[l.getRow() - 1][l.getColumn() - 1].isEmpty());
 
 	}
@@ -413,7 +421,7 @@ public class Grid implements GridInterface, Cloneable
         {
             b = false;
         }
-        if (r > dimension || c > dimension)
+        if (r > getDimension() || c > getDimension())
         {
             b = false;
         }
