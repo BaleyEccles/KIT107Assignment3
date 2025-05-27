@@ -348,6 +348,7 @@ public class Grid implements GridInterface, Cloneable
 		else
 		{
             m = (Symbol)s.clone();
+            m.setLocation(l);
             q = board[l.getRow() - 1][l.getColumn() - 1];
             q.setSymbol(m);
             
