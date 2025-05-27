@@ -21,7 +21,7 @@ public class Queue implements QueueInterface
 
 	// properties
 	protected Node first;		// the node at the front of the queue
-
+    public int size = 0;
 
 	/*
 	 *	Queue
@@ -79,9 +79,8 @@ public class Queue implements QueueInterface
 	public boolean isEmpty()
 	{
 	   	trace("isEmpty: isEmpty starts and ends");
-
-        //COMPLETE ME
-        return true;
+        
+        return (first == null);
 	}
 
 
@@ -111,8 +110,7 @@ public class Queue implements QueueInterface
 		{
 			// first value exists
 		   	trace("front: front ends");
-            //COMPLETE ME
-            return true;
+            return first.getData();
 		}
 	}
 
@@ -143,7 +141,8 @@ public class Queue implements QueueInterface
 		{
 			// first value exists
 		   	trace("remove: updating first node");
-//COMPLETE ME
+            first = first.getNext();
+            size--;
 		}
 
 	   	trace("remove: remove ends");
@@ -172,9 +171,31 @@ public class Queue implements QueueInterface
 		Node n;	// new node for value to be added
 		
 	   	trace("add: add starts");
+        
+        n = new Node(o);
+        c = first;
+        if (isEmpty())
+        {
+            first = n;
+        }
+        else
+        {
+            boolean cont = true;
+            while (cont)
+            {
 
-//COMPLETE ME
-		
+                if (c.getNext() == null)
+                {
+                    c.setNext(n);
+                    cont = false;
+                }
+                c = c.getNext();
+
+            }
+            
+        }
+        size++;
+            
 	   	trace("add: add ends");
 	}
 

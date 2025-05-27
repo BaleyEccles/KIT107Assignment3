@@ -104,11 +104,8 @@ public class Symbol implements SymbolInterface, Cloneable
 	{
 		trace("isEmpty: isEmpty starts and ends");
 
-        if (icon == null)
-        {
-            return true;
-        }
-        return false;
+        return (icon == null);
+
 	}
 	
 	
