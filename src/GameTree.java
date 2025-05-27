@@ -34,7 +34,7 @@ public class GameTree implements GameTreeInterface
 	{
 		trace("GameTree: constructor starts");
 		
-        root = null;
+        	root = null;
 		
 		trace("GameTree: constructor ends");
 	}
@@ -107,7 +107,7 @@ public class GameTree implements GameTreeInterface
 
 		trace("getData: getData ends");
         
-        return root.getData();
+        	return root.getData();
 	}
 	
 	
@@ -134,7 +134,7 @@ public class GameTree implements GameTreeInterface
 		
 		trace("getLevel: getLevel ends");
 
-        return root.getLevel();
+       		return root.getLevel();
 	}	
 	
 
@@ -195,7 +195,7 @@ public class GameTree implements GameTreeInterface
 			throw new EmptyGameTreeException();
   		}
         
-        r = new GameTree(root.getSibling().getData(), root.getSibling().getLevel());
+        	r = new GameTree(root.getSibling().getData(), root.getSibling().getLevel());
 
 
 		trace("getSibling: getSibling ends");
@@ -225,7 +225,7 @@ public class GameTree implements GameTreeInterface
 			throw new EmptyGameTreeException();
 		}
 		
-        root.setData(o);
+        	root.setData(o);
 		
 		trace("setData: setData ends");
 	}
@@ -253,7 +253,7 @@ public class GameTree implements GameTreeInterface
 			throw new EmptyGameTreeException();
   		}
   		
-        root.setLevel(l);
+        	root.setLevel(l);
 		
 		trace("setLevel: setLevel ends");
 	}
@@ -309,7 +309,7 @@ public class GameTree implements GameTreeInterface
 			throw new EmptyGameTreeException();
 		}
 		  
-        root.setSibling(t.root);
+        	root.setSibling(t.root);
         
 		trace("setSibling: setSibling ends");
 	}
@@ -342,34 +342,34 @@ public class GameTree implements GameTreeInterface
 	
 		trace("generateLevelDF: generateLevelDF starts");
 		
-        //COMPLETE ME: Done I think
-        b1 = (Grid)getData();
+       		//COMPLETE ME: Done I think
+        	b1 = (Grid)getData();
         
-        d = b1.getDimension();
+	        d = b1.getDimension();
         
-        v = getLevel() + 1;
+        	v = getLevel() + 1;
         
-        for (int r = MINIMUM; r <= d; r++)
-		{
-			for (int c = MINIMUM; c <= d; c++)
+       		for (int r = MINIMUM; r <= d; r++)
 			{
-				l = new Location(r, c);
-                if (b1.clash(l)) {
-                }
-                if (b1.squareOccupied(l)) {
-                }
-                if (!b1.clash(l) && !b1.squareOccupied(l))
-                {
-                    b2 = (Grid)b1.clone();
-                    b2.occupySquare(l, m);
+				for (int c = MINIMUM; c <= d; c++)
+				{
+					l = new Location(r, c);
+                			if (b1.clash(l)) {
+                			}
+                			if (b1.squareOccupied(l)) {
+                			}
+                			if (!b1.clash(l) && !b1.squareOccupied(l))
+                			{
+                    				b2 = (Grid)b1.clone();
+                    				b2.occupySquare(l, m);
                     
-                    t = new GameTree(b2, v);
-                    s.push(t);
-                    this.setChild(t);
+                    				t = new GameTree(b2, v);
+                    				s.push(t);
+                    				this.setChild(t);
                     
-                }
-            }
-        }
+                			}
+           	 		}
+        		}
 		trace("generateLevelDF: generateLevelDF ends");
 	}
 	
@@ -405,20 +405,20 @@ public class GameTree implements GameTreeInterface
 		
 		trace("buildGameDF: buildGameDF starts");
         
-        t = new GameTree();
-        if (isEmpty())
-        {
-            t = this;
-            trace("buildGameDF: buildGameDF ends 1");
-            return t;
-        }
-        if (getLevel() == d)
-        {
-            t = this;
-            trace("buildGameDF: buildGameDF ends 2");
-            // Clear the stack because we have found a solution and there is no reasone to continue
-            while (!s.isEmpty())
-            {
+        	t = new GameTree();
+       		if (isEmpty())
+        	{
+            		t = this;
+            		trace("buildGameDF: buildGameDF ends 1");
+           	 	return t;
+        	}
+        	if (getLevel() == d)
+        	{
+            		t = this;
+            		trace("buildGameDF: buildGameDF ends 2");
+            		// Clear the stack because we have found a solution and there is no reasone to continue
+            		while (!s.isEmpty())
+            	{
                 s.pop();
             }
             return t;
@@ -468,33 +468,33 @@ public class GameTree implements GameTreeInterface
 
 		trace("generateLevelBF: generateLevelBF starts");
 
-        b1 = (Grid)getData();
+        	b1 = (Grid)getData();
         
-        d = b1.getDimension();
+        	d = b1.getDimension();
         
-        v = getLevel() + 1;
+        	v = getLevel() + 1;
         
-        for (int r = MINIMUM; r <= d; r++)
+        	for (int r = MINIMUM; r <= d; r++)
 		{
 			for (int c = MINIMUM; c <= d; c++)
 			{
 				l = new Location(r, c);
-                if (b1.clash(l)) {
-                }
-                if (b1.squareOccupied(l)) {
-                }
-                if (!b1.clash(l) && !b1.squareOccupied(l))
-                {
-                    b2 = (Grid)b1.clone();
-                    b2.occupySquare(l, m);
+                		if (b1.clash(l)) {
+                		}
+                		if (b1.squareOccupied(l)) {
+                		}
+                		if (!b1.clash(l) && !b1.squareOccupied(l))
+               			{
+                    			b2 = (Grid)b1.clone();
+                    			b2.occupySquare(l, m);
                     
-                    t = new GameTree(b2, v);
-                    q.add(t);
-                    this.setChild(t);
+                   			t = new GameTree(b2, v);
+                    			q.add(t);
+                    			this.setChild(t);
                     
-                }
-            }
-        }
+                		}
+            		}
+        	}
         
 		
 		trace("generateLevelBF: generateLevelBF ends");
@@ -533,18 +533,18 @@ public class GameTree implements GameTreeInterface
 		
 		trace("buildGameBF: buildGameBF starts");
 		
-        t = new GameTree();
-        if (isEmpty())
-        {
-            t = this;
-            return t;
-        }
-        if (getLevel() == d)
-        {
-            t = this;
-            // Clear the queue because we have found a solution and there is no reasone to continue
-            while (!q.isEmpty())
-            {
+        	t = new GameTree();
+        	if (isEmpty())
+        	{
+            		t = this;
+            		return t;
+        	}
+        	if (getLevel() == d)
+        	{
+            		t = this;
+            		// Clear the queue because we have found a solution and there is no reasone to continue
+            		while (!q.isEmpty())
+            	{
                 q.remove();
             }
             return t;
