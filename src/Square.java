@@ -42,13 +42,13 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	public Square(Location l)
 	{		
-      	trace("Square: Constructor starts");
-
-        Symbol s = new Symbol(l);
-        initialiseSquare(l, s);
-
-        
-      	trace("Square: Constructor ends");
+	      	trace("Square: Constructor starts");
+	
+	        Symbol s = new Symbol(l);
+	        initialiseSquare(l, s);
+	
+	        
+	      	trace("Square: Constructor ends");
 	}
 	
 	
@@ -68,11 +68,11 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	public Square(Location l, Symbol s)
 	{
-      	trace("Square: Constructor starts");
-        
-        initialiseSquare(l, s);
-
-      	trace("Square: Constructor ends");
+	      	trace("Square: Constructor starts");
+	        
+	        initialiseSquare(l, s);
+	
+	      	trace("Square: Constructor ends");
 	}
 	
 
@@ -122,9 +122,9 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	public boolean isEmpty()
 	{		
-      	trace("isEmpty: isEmpty starts and ends");
-
-        return (getSymbol().isEmpty());
+	      	trace("isEmpty: isEmpty starts and ends");
+	
+	        return (getSymbol().isEmpty());
 	}
 	
 	
@@ -140,7 +140,7 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	public Location getLocation()
 	{
-      	trace("getLocation: getLocation starts and ends");
+	      	trace("getLocation: getLocation starts and ends");
 
 		return loc;
 	}
@@ -161,11 +161,11 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	public void setLocation(Location l)
 	{
-      	trace("setLocation: setLocation starts");
+	      	trace("setLocation: setLocation starts");
 
 		loc = l;
 
-      	trace("setLocation: setLocation ends");
+	      	trace("setLocation: setLocation ends");
 	}
 	
 	
@@ -181,7 +181,7 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	public Symbol getSymbol()
 	{
-      	trace("getSymbol: getSymbol starts and ends");
+	      	trace("getSymbol: getSymbol starts and ends");
 
 		return symbol;
 	}
@@ -201,11 +201,11 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	public void setSymbol(Symbol s)
 	{
-      	trace("setSymbol: setSymbol starts");
+	      	trace("setSymbol: setSymbol starts");
 
 		symbol = s;
 
-      	trace("setSymbol: setSymbol ends");
+	      	trace("setSymbol: setSymbol ends");
 	}
 	
 	
@@ -218,7 +218,7 @@ public class Square implements SquareInterface, Cloneable
 		Informally: return the current square's background
 	*/
 	{
-      	trace("getBackground: getBackground starts and ends");
+	      	trace("getBackground: getBackground starts and ends");
 
 		return background;
 	}
@@ -256,11 +256,11 @@ public class Square implements SquareInterface, Cloneable
 	{
 		Square s;	// the new Square
 		
-      	trace("clone: clone starts");
-
-        s = new Square((Location)getLocation().clone(), (Symbol)getSymbol().clone());
-            
-      	trace("clone: clone ends");
+	      	trace("clone: clone starts");
+	
+	        s = new Square((Location)getLocation().clone(), (Symbol)getSymbol().clone());
+	            
+	      	trace("clone: clone ends");
 		return s;
 	}
 
@@ -288,8 +288,8 @@ public class Square implements SquareInterface, Cloneable
 		int c;		// column component of location
 		Graphics g;	// the graphics context
 		
-      	trace("showSquare: showSquare starts");
-		
+	      	trace("showSquare: showSquare starts");
+			
 		// where is this square
 		r = getLocation().getRow();
 		c = getLocation().getColumn();
@@ -303,11 +303,11 @@ public class Square implements SquareInterface, Cloneable
 		g.fillRect((c+1) * 32 + 110, (r+1) * 32 + 50, w, w);
 		//draw the symbol
 
-        getSymbol().showSymbol(s);
+	        getSymbol().showSymbol(s);
 		//reset back to black 
 		g.setColor(Color.BLACK);
 		
-      	trace("showSquare: showSquare ends");
+	      	trace("showSquare: showSquare ends");
 	}
 	
 	
@@ -326,7 +326,7 @@ public class Square implements SquareInterface, Cloneable
 	{
 		String s;	// the result
 
-      	trace("toString: toString starts");
+	      	trace("toString: toString starts");
       	
 		if (isEmpty())
 		{
@@ -341,7 +341,7 @@ public class Square implements SquareInterface, Cloneable
 			s = getSymbol().toString();
 		}
 
-      	trace("toString: toString ends");
+	      	trace("toString: toString ends");
 		return s;
 	}
 
