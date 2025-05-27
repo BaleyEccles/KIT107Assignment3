@@ -39,11 +39,11 @@ public class Symbol implements SymbolInterface, Cloneable
      */
 	public Symbol()
 	{
-      	trace("Symbol: Constructor starts");
-        setIcon(null);
-        setLocation(null);
-
-      	trace("Symbol: Constructor ends");
+	      	trace("Symbol: Constructor starts");
+	        setIcon(null);
+	        setLocation(null);
+	
+	      	trace("Symbol: Constructor ends");
 	}
 	
 	
@@ -61,12 +61,12 @@ public class Symbol implements SymbolInterface, Cloneable
 	*/
 	public Symbol(Location l)
 	{
-      	trace("Symbol: Constructor starts");
-
-        setIcon(null);
+	      	trace("Symbol: Constructor starts");
+	
+	        setIcon(null);
 		setLocation(l);
-
-      	trace("Symbol: Constructor ends");
+	
+	      	trace("Symbol: Constructor ends");
 	}
 	
 	
@@ -84,12 +84,12 @@ public class Symbol implements SymbolInterface, Cloneable
 	*/
 	protected Symbol(Image i, Location l)
 	{
-     	trace("Symbol: Constructor starts");
+     		trace("Symbol: Constructor starts");
 
 		setIcon(i);
 		setLocation(l);
         
-      	trace("Symbol: Constructor ends");
+      		trace("Symbol: Constructor ends");
 	}
 	
 	
@@ -104,7 +104,7 @@ public class Symbol implements SymbolInterface, Cloneable
 	{
 		trace("isEmpty: isEmpty starts and ends");
 
-        return (icon == null);
+        	return (icon == null);
 
 	}
 	
@@ -124,7 +124,7 @@ public class Symbol implements SymbolInterface, Cloneable
 	{	
 		trace("setIcon: setIcon starts");
 
-        icon = i;
+        	icon = i;
         
 		trace("setIcon: setIcon ends");
 	}
@@ -144,7 +144,7 @@ public class Symbol implements SymbolInterface, Cloneable
 	{
 		trace("setLocation: setLocation starts");
 
-        loc = l;
+        	loc = l;
 
 		trace("setLocation: setLocation ends");
 
@@ -164,7 +164,7 @@ public class Symbol implements SymbolInterface, Cloneable
 	{
 		trace("getIcon: getIcon starts and ends");
 
-        return icon;
+        	return icon;
 	}
 	
 	
@@ -181,7 +181,7 @@ public class Symbol implements SymbolInterface, Cloneable
 	{
 		trace("getLocation: getLocation starts and ends");
 
-        return loc;
+        	return loc;
 	}
 	
 	
@@ -197,12 +197,12 @@ public class Symbol implements SymbolInterface, Cloneable
 	public Object clone()
 	{
 		Symbol s;	// result
-		
-      	trace("clone: clone starts");
-
-        s = new Symbol(getIcon(), getLocation());
-		
-      	trace("clone: clone ends");
+			
+	      	trace("clone: clone starts");
+	
+	        s = new Symbol(getIcon(), getLocation());
+			
+	      	trace("clone: clone ends");
 		return s;
 	}
 	
@@ -225,7 +225,7 @@ public class Symbol implements SymbolInterface, Cloneable
 		int c;		// column component of location
 		Graphics g;	// the graphics context
 		
-      	trace("showSymbol: showSymbol starts");
+      	t	race("showSymbol: showSymbol starts");
 		
 		// where is this square
 		r = getLocation().getRow();
@@ -241,7 +241,7 @@ public class Symbol implements SymbolInterface, Cloneable
 			g.drawImage(icon,(c+1)*32+110,(r+1)*32+50,null);
 		}
 
-      	trace("showSymbol: showSymbol ends");
+      		trace("showSymbol: showSymbol ends");
 	}
 	
 	
@@ -258,19 +258,19 @@ public class Symbol implements SymbolInterface, Cloneable
 	*/
 	public String toString()
 	{
-      	trace("toString: toString starts");
+      		trace("toString: toString starts");
 
 		if (isEmpty())
 		{
 			// empty symbol
-      		trace("toString: toString ends (empty)");
+      			trace("toString: toString ends (empty)");
 			return "   ";
 		}
 		else
 		{
 			// non-empty symbol
-     		trace("toString: toString ends (non-empty)");
-      		return " Q ";
+     			trace("toString: toString ends (non-empty)");
+      			return " Q ";
 		}
 	}
 
