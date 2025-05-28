@@ -20,7 +20,6 @@ public class Queue implements QueueInterface
 
     // properties
     protected Node first;       // the node at the front of the queue
-    public int size = 0;        // the size of the queue
 
     /*
      *  Queue
@@ -140,8 +139,9 @@ public class Queue implements QueueInterface
         {
             // first value exists
             trace("remove: updating first node");
+
+            // Remove the first item by making first become the next item
             first = first.getNext();
-            size--;
         }
 
         trace("remove: remove ends");
@@ -168,32 +168,46 @@ public class Queue implements QueueInterface
     {
         Node c; // node for traversing the linked list
         Node n; // new node for value to be added
-
+        boolean continueTraversing; // boolean for checking if we are at the end of the queue
+        
         trace("add: add starts");
 
         n = new Node(o);
         c = first;
+
+        // Handle case when the queue is empty
         if (isEmpty())
         {
             first = n;
         }
+        // When there is at least one item in the queue
         else
         {
-            boolean cont = true;
-            while (cont)
+            // We are initally not at the end of the queue, so we want to continue
+            // Hence, cont = true
+            continueTraversing = true;
+            
+            // Traverse the queue
+            while (continueTraversing)
             {
-
+                // Check if we have reached the end of the queue
                 if (c.getNext() == null)
                 {
+                    // We have reached the end of the queue
+                    // Set the last item in the queue to link to the new item, making it the new last item
                     c.setNext(n);
-                    cont = false;
+                    
+                    // Stop traversing the queue
+                    continueTraversing = false;
                 }
+                
+                // Update c to be the next item in the queue
                 c = c.getNext();
 
             }
 
         }
-        size++;
+
 
         trace("add: add ends");
     }

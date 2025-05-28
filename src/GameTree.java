@@ -572,7 +572,7 @@ public class GameTree implements GameTreeInterface
         // If the queue is not empty:
         while (!q.isEmpty())
         {
-            // Get the front  item from the queue
+            // Get the front item from the queue
             t = (GameTree)(q.front());
             q.remove();
 
