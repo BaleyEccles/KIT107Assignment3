@@ -2,15 +2,14 @@
 /**
  *  Queue ADT
  *
- *  @author <Insert names and student IDs>
- *  @version <Insert date>
+ *  @author Baley Eccles - 652137 and Tyler Robards - 651790
+ *  @version 28/05/25
  *
  *  This file holds the Queue ADT.  The Queue is built
  *  using a linked list of Node ADTs.  A Queue object
  *  consists of a "first" field which refers to a Node
  *  object.
  *
- *  YOU NEED TO MAKE CHANGES TO THIS FILE!
  */
 
 

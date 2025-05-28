@@ -2,15 +2,14 @@
 /**
  *  GameTree ADT
  *
- *  @author <Insert names and student IDs>
- *  @version <Insert date>
+ *  @author Baley Eccles - 652137 and Tyler Robards - 651790
+ *  @version 28/05/25
  *
  *  This file holds the GameTree ADT which is a
  *  general game tree.  The GameTree is built using
  *  TNode ADTs.  A GameTree object consists of a
  *  "root" field which refers to a TNode object.
  *
- *  YOU NEED TO MAKE CHANGES TO THIS FILE!
  */
 
 

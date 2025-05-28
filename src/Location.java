@@ -2,14 +2,13 @@
 /**
  *  Location ADT
  *
- *  @author <Insert names and student IDs>
- *  @version <Insert date>
+ *  @author Baley Eccles - 652137 and Tyler Robards - 651790
+ *  @version 28/05/25
  *
  *  This file holds the Location ADT which represents
  *  indices to (positions within) the two-dimensional grid.
  *  A Location consists of a row number and a column number.
  *
- *  YOU NEED TO MAKE CHANGES TO THIS FILE!
  */
 
 

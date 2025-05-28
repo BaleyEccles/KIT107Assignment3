@@ -2,8 +2,8 @@
 /**
  *  Grid ADT
  *
- *  @author <Insert names and student IDs>
- *  @version <Insert date>
+ *  @author Baley Eccles - 652137 and Tyler Robards - 651790
+ *  @version 28/05/25
  *
  *  This file holds the Grid ADT which represents
  *  the n-Queens board.  The Grid consists of a location
@@ -11,7 +11,6 @@
  *  a value (of the current board), and a two-dimensional
  *  array (table/matrix) of the squares in the board.
  *
- *  YOU NEED TO MAKE CHANGES TO THIS FILE!
  */
 
 import java.awt.*;

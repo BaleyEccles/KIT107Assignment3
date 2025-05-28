@@ -2,15 +2,14 @@
 /**
  *  Symbol ADT
  *
- *  @author <Insert names and student IDs>
- *  @version <Insert date>
+ *  @author Baley Eccles - 652137 and Tyler Robards - 651790
+ *  @version 28/05/25
  *
  *  This file holds the Symbol ADT which represents
  *  pieces within the two-dimensional grid.
  *  A Symbol consists of a representation of a queen plus its
  location.
  *
- *  YOU NEED TO MAKE CHANGES TO THIS FILE!
  */
 
 
